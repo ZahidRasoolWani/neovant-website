@@ -351,4 +351,483 @@
             <a class="text-text-muted-light dark:text-text-muted-dark text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#contact">Contact</a>
         </nav>
         <div class="w-px h-6 bg-subtle-light dark:bg-subtle-dark mx-2"></div>
-        <button aria-label="Toggle dark mode" class="flex items-center justify-center size-10 rounded-full text-text-muted-light dark:text-text-muted-dark hover:bg-subtle-light dark:hover:bg-subtle-dark transition-colors" i
+        <button aria-label="Toggle dark mode" class="flex items-center justify-center size-10 rounded-full text-text-muted-light dark:text-text-muted-dark hover:bg-subtle-light dark:hover:bg-subtle-dark transition-colors" id="theme-toggle">
+            <span class="material-symbols-outlined dark:hidden">light_mode</span>
+            <span class="material-symbols-outlined hidden dark:inline">dark_mode</span>
+        </button>
+        <a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-5 bg-primary text-white text-sm font-semibold leading-normal tracking-wide transition-all duration-300 ease-in-out hover:scale-105 hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/30" href="#contact">
+            <span class="truncate">Get a Quote</span>
+        </a>
+    </div>
+    
+    <!-- Mobile Theme Toggle -->
+    <div class="flex md:hidden">
+        <button aria-label="Toggle dark mode" class="flex items-center justify-center size-10 rounded-full text-text-muted-light dark:text-text-muted-dark hover:bg-subtle-light dark:hover:bg-subtle-dark transition-colors" id="theme-toggle-mobile">
+            <span class="material-symbols-outlined dark:hidden">light_mode</span>
+            <span class="material-symbols-outlined hidden dark:inline">dark_mode</span>
+        </button>
+    </div>
+</header>
+
+<main class="flex-1">
+<section class="relative min-h-[calc(100vh-80px)] md:min-h-[600px] flex items-center justify-center py-20 md:py-32 overflow-hidden">
+    <div class="parallax-bg absolute inset-0 w-full h-full bg-cover bg-fixed bg-center -z-10"></div>
+    <div class="absolute inset-0 bg-background-light/50 dark:bg-background-dark/50 -z-10"></div>
+    <div class="container mx-auto px-4 text-center z-10">
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 mb-6">Empowering Businesses Through Innovation and Technology</h1>
+        <p class="max-w-2xl mx-auto text-base sm:text-lg md:text-xl leading-relaxed sm:leading-relaxed md:leading-relaxed text-text-muted-light dark:text-text-muted-dark mb-10">We deliver cutting-edge solutions to drive your success in the digital age. Based in Jammu & Kashmir, serving clients nationwide.</p>
+        <div class="flex-wrap gap-4 flex items-center justify-center">
+            <a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-semibold leading-normal tracking-wide transition-all duration-300 ease-in-out hover:scale-105 hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/30" href="#contact">
+                <span class="truncate">Get a Quote</span>
+            </a>
+            <a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-subtle-light dark:bg-subtle-dark text-text-light dark:text-text-dark text-base font-semibold leading-normal tracking-wide transition-all duration-300 ease-in-out hover:scale-105 hover:bg-gray-200 dark:hover:bg-gray-800 hover:shadow-lg dark:hover:shadow-gray-900/40" href="#contact">
+                <span class="truncate">Contact Us</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="py-20 md:py-32 bg-subtle-light dark:bg-background-dark" id="services">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12 sm:mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold leading-tight tracking-tight mb-4">Our Comprehensive Services</h2>
+            <p class="text-base sm:text-lg leading-relaxed sm:leading-relaxed text-text-muted-light dark:text-text-muted-dark max-w-3xl mx-auto">From concept to deployment, we offer a complete suite of technology services to elevate your business in Jammu & Kashmir and beyond.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="service-card flex flex-col gap-3 rounded-xl bg-background-light dark:bg-subtle-dark p-6 border border-subtle-light dark:border-subtle-dark/50 hover:border-primary/50 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2 hover:scale-105" style="transition-delay: 100ms">
+                <span class="material-symbols-outlined text-primary text-4xl mb-2">code</span>
+                <h3 class="text-xl font-bold leading-tight">Web Development</h3>
+                <p class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-relaxed">Creating responsive and robust web applications for your business with modern technologies.</p>
+            </div>
+            <div class="service-card flex flex-col gap-3 rounded-xl bg-background-light dark:bg-subtle-dark p-6 border border-subtle-light dark:border-subtle-dark/50 hover:border-primary/50 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2 hover:scale-105" style="transition-delay: 200ms">
+                <span class="material-symbols-outlined text-primary text-4xl mb-2">phone_iphone</span>
+                <h3 class="text-xl font-bold leading-tight">Mobile App Development</h3>
+                <p class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-relaxed">Building intuitive apps for iOS and Android to engage your users on the go.</p>
+            </div>
+            <div class="service-card flex flex-col gap-3 rounded-xl bg-background-light dark:bg-subtle-dark p-6 border border-subtle-light dark:border-subtle-dark/50 hover:border-primary/50 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2 hover:scale-105" style="transition-delay: 300ms">
+                <span class="material-symbols-outlined text-primary text-4xl mb-2">business_center</span>
+                <h3 class="text-xl font-bold leading-tight">ERP Solutions</h3>
+                <p class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-relaxed">Streamlining your business processes with integrated ERP systems tailored for your needs.</p>
+            </div>
+            <div class="service-card flex flex-col gap-3 rounded-xl bg-background-light dark:bg-subtle-dark p-6 border border-subtle-light dark:border-subtle-dark/50 hover:border-primary/50 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2 hover:scale-105" style="transition-delay: 400ms">
+                <span class="material-symbols-outlined text-primary text-4xl mb-2">groups</span>
+                <h3 class="text-xl font-bold leading-tight">CRM Implementation</h3>
+                <p class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-relaxed">Enhancing customer relationships with tailored CRM solutions that drive growth.</p>
+            </div>
+            <div class="service-card flex flex-col gap-3 rounded-xl bg-background-light dark:bg-subtle-dark p-6 border border-subtle-light dark:border-subtle-dark/50 hover:border-primary/50 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2 hover:scale-105" style="transition-delay: 500ms">
+                <span class="material-symbols-outlined text-primary text-4xl mb-2">psychology</span>
+                <h3 class="text-xl font-bold leading-tight">Generative AI & AI Solutions</h3>
+                <p class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-relaxed">Leveraging AI to unlock new possibilities and drive efficiencies in your business.</p>
+            </div>
+            <div class="service-card flex flex-col gap-3 rounded-xl bg-background-light dark:bg-subtle-dark p-6 border border-subtle-light dark:border-subtle-dark/50 hover:border-primary/50 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2 hover:scale-105" style="transition-delay: 600ms">
+                <span class="material-symbols-outlined text-primary text-4xl mb-2">cloud</span>
+                <h3 class="text-xl font-bold leading-tight">Cloud & DevOps Services</h3>
+                <p class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-relaxed">Optimizing infrastructure with scalable cloud and DevOps strategies.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-20 md:py-32" id="why-choose-us">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12 sm:mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold leading-tight tracking-tight mb-4">Why Choose Us</h2>
+            <p class="text-base sm:text-lg leading-relaxed sm:leading-relaxed text-text-muted-light dark:text-text-muted-dark max-w-3xl mx-auto">We are dedicated to providing top-tier technology solutions that are tailored to your unique business needs, ensuring you always stay ahead of the curve.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            <div class="flex flex-col items-center gap-3 p-6">
+                <div class="flex items-center justify-center size-16 rounded-full bg-primary/10 dark:bg-primary/20 text-primary mb-4">
+                    <span class="material-symbols-outlined text-4xl">workspace_premium</span>
+                </div>
+                <h3 class="text-xl font-bold leading-tight">Proven Expertise</h3>
+                <p class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-relaxed">Our team of certified professionals brings years of industry experience.</p>
+            </div>
+            <div class="flex flex-col items-center gap-3 p-6">
+                <div class="flex items-center justify-center size-16 rounded-full bg-primary/10 dark:bg-primary/20 text-primary mb-4">
+                    <span class="material-symbols-outlined text-4xl">lightbulb</span>
+                </div>
+                <h3 class="text-xl font-bold leading-tight">Innovative Solutions</h3>
+                <p class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-relaxed">We leverage the latest technologies to build future-proof solutions.</p>
+            </div>
+            <div class="flex flex-col items-center gap-3 p-6">
+                <div class="flex items-center justify-center size-16 rounded-full bg-primary/10 dark:bg-primary/20 text-primary mb-4">
+                    <span class="material-symbols-outlined text-4xl">favorite</span>
+                </div>
+                <h3 class="text-xl font-bold leading-tight">Client-Centric Approach</h3>
+                <p class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-relaxed">Your success is our priority. We work closely with you to understand your goals.</p>
+            </div>
+            <div class="flex flex-col items-center gap-3 p-6">
+                <div class="flex items-center justify-center size-16 rounded-full bg-primary/10 dark:bg-primary/20 text-primary mb-4">
+                    <span class="material-symbols-outlined text-4xl">settings</span>
+                </div>
+                <h3 class="text-xl font-bold leading-tight">Customized For You</h3>
+                <p class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-relaxed">We deliver tailor-made solutions that perfectly fit your requirements.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-20 md:py-32 bg-subtle-light dark:bg-subtle-dark" id="about">
+    <div class="max-w-4xl mx-auto text-center px-4">
+        <h2 class="text-3xl md:text-4xl font-bold leading-tight tracking-tight mb-12">Driven by Purpose, Guided by Values</h2>
+        <div class="flex flex-col md:flex-row gap-12 text-left">
+            <div class="md:w-1/2">
+                <h3 class="text-2xl font-semibold text-primary mb-4">Our Mission</h3>
+                <p class="text-text-muted-light dark:text-text-muted-dark text-base sm:text-lg leading-relaxed sm:leading-relaxed">To empower businesses with transformative technology solutions that drive growth, efficiency, and innovation. We are committed to delivering exceptional value and building long-lasting partnerships with our clients.</p>
+            </div>
+            <div class="md:w-1/2">
+                <h3 class="text-2xl font-semibold text-primary mb-4">Our Vision</h3>
+                <p class="text-text-muted-light dark:text-text-muted-dark text-base sm:text-lg leading-relaxed sm:leading-relaxed">To be a leading global technology partner, recognized for our cutting-edge solutions, client-centric approach, and dedication to pushing the boundaries of what's possible in the digital world.</p>
+            </div>
+        </div>
+        <div class="mt-16">
+            <a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-semibold leading-normal tracking-wide transition-all duration-300 ease-in-out hover:scale-105 hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/30 mx-auto" href="#contact">
+                <span class="truncate">Learn More About Our Story</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="py-20 md:py-32 bg-background-light dark:bg-background-dark" id="experts">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12 sm:mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold leading-tight tracking-tight mb-4">Meet Our Experts</h2>
+            <p class="text-base sm:text-lg leading-relaxed sm:leading-relaxed text-text-muted-light dark:text-text-muted-dark max-w-3xl mx-auto">The brilliant minds behind our innovative solutions, dedicated to your success.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center group">
+                <div class="relative w-48 h-48 mx-auto mb-4">
+                    <img alt="Danish Mushtaq - Co-Founder and Lead Developer at Neovant Advanced Solutions" class="w-full h-full rounded-full object-cover shadow-lg transform group-hover:scale-105 transition-transform duration-300" height="192" src="src/danish2.jpeg" width="192" loading="lazy"/>
+                    <div class="absolute inset-0 rounded-full border-2 border-primary/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="flex justify-center items-center gap-2">
+                    <h3 class="text-xl font-bold text-text-light dark:text-text-dark">Danish Mushtaq</h3>
+                    <a aria-label="Danish Mushtaq's LinkedIn Profile" class="text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary transition-colors" href="https://www.linkedin.com/in/danishmushtaqbhat/" target="_blank" rel="noopener">
+                        <svg class="h-5 w-5" fill="currentColor" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"></path></svg>
+                    </a>
+                </div>
+                <p class="text-sm text-primary font-medium">Co-Founder</p>
+                <p class="text-text-muted-light dark:text-text-muted-dark text-base mt-2">Architect of scalable systems and a craftsman of end-to-end solutions.</p>
+            </div>
+            <div class="text-center group">
+                <div class="relative w-48 h-48 mx-auto mb-4">
+                    <img alt="Shah Suhail - Co-Founder and AI Specialist at Neovant Advanced Solutions" class="w-full h-full rounded-full object-cover shadow-lg transform group-hover:scale-105 transition-transform duration-300" height="192" src="src/suhail2.jpeg" width="192" loading="lazy"/>
+                    <div class="absolute inset-0 rounded-full border-2 border-primary/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="flex justify-center items-center gap-2">
+                    <h3 class="text-xl font-bold text-text-light dark:text-text-dark">Shah Suhail</h3>
+                    <a aria-label="Shah Suhail's LinkedIn Profile" class="text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary transition-colors" href="https://www.linkedin.com/in/suhail-s-b16bb1272/" target="_blank" rel="noopener">
+                        <svg class="h-5 w-5" fill="currentColor" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"></path></svg>
+                    </a>
+                </div>
+                <p class="text-sm text-primary font-medium">Co-Founder</p>
+                <p class="text-text-muted-light dark:text-text-muted-dark text-base mt-2">Developer focused on scalable software, clean architecture, and continuous innovation.</p>
+            </div>
+            <div class="text-center group">
+                <div class="relative w-48 h-48 mx-auto mb-4">
+                    <img alt="Wahid Mushtaq - Developer and Data Analytics Expert at Neovant Advanced Solutions" class="w-full h-full rounded-full object-cover shadow-lg transform group-hover:scale-105 transition-transform duration-300" height="192" src="src/wahid.jpeg" width="192" loading="lazy"/>
+                    <div class="absolute inset-0 rounded-full border-2 border-primary/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="flex justify-center items-center gap-2">
+                    <h3 class="text-xl font-bold text-text-light dark:text-text-dark">Wahid Mushtaq</h3>
+                    <a aria-label="Wahid Mushtaq's LinkedIn Profile" class="text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary transition-colors" href="https://www.linkedin.com/in/wahid-mush/" target="_blank" rel="noopener">
+                        <svg class="h-5 w-5" fill="currentColor" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"></path></svg>
+                    </a>
+                </div>
+                <p class="text-sm text-primary font-medium">Developer</p>
+                <p class="text-text-muted-light dark:text-text-muted-dark text-base mt-2">Turning data into decisions through analytics, visualization, and machine learning.</p>
+            </div>
+            <div class="text-center group">
+                <div class="relative w-48 h-48 mx-auto mb-4">
+                    <img alt="Zahid Rasool Wani - Developer and Full Stack Engineer at Neovant Advanced Solutions" class="w-full h-full rounded-full object-cover shadow-lg transform group-hover:scale-105 transition-transform duration-300" height="192" src="src/zahid3.jpg" width="192" loading="lazy"/>
+                    <div class="absolute inset-0 rounded-full border-2 border-primary/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="flex justify-center items-center gap-2">
+                    <h3 class="text-xl font-bold text-text-light dark:text-text-dark">Zahid Rasool Wani</h3>
+                    <a aria-label="Zahid Rasool Wani's LinkedIn Profile" class="text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary transition-colors" href="https://www.linkedin.com/in/zahid1330/" target="_blank" rel="noopener">
+                        <svg class="h-5 w-5" fill="currentColor" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"></path></svg>
+                    </a>
+                </div>
+                <p class="text-sm text-primary font-medium">Developer</p>
+                <p class="text-text-muted-light dark:text-text-muted-dark text-base mt-2">Transforming ideas into solutions with expertise in web development, machine learning, and modern technologies.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-20 md:py-32" id="contact">
+    <div class="max-w-5xl mx-auto px-4">
+        <div class="text-center mb-12 sm:mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold leading-tight tracking-tight mb-4">Get In Touch</h2>
+            <p class="text-base sm:text-lg leading-relaxed sm:leading-relaxed text-text-muted-light dark:text-text-muted-dark max-w-3xl mx-auto">Have a project in mind or just want to say hello? We'd love to hear from you.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-10 lg:gap-16">
+            <div class="relative">
+                <div class="absolute inset-0 z-10 flex flex-col items-center justify-center rounded-lg bg-background-light/95 dark:bg-subtle-dark/95 backdrop-blur-sm p-8 text-center opacity-0 -translate-y-4 pointer-events-none" id="success-message">
+                    <span class="material-symbols-outlined text-5xl text-green-500 mb-4">check_circle</span>
+                    <h3 class="text-2xl font-bold mb-2">Message Sent!</h3>
+                    <p class="text-text-muted-light dark:text-text-muted-dark">Thank you for your message! We will get back to you shortly.</p>
+                </div>
+                <form class="space-y-4 group" id="contact-form" novalidate="">
+                    <div class="relative">
+                        <label class="hidden" for="name">Name</label>
+                        <input class="block w-full rounded-lg border-subtle-light dark:border-subtle-dark/50 bg-background-light dark:bg-subtle-dark shadow-sm focus:border-primary focus:ring-primary text-base sm:text-sm p-3 placeholder:text-text-muted-light dark:placeholder:text-text-muted-dark peer" id="name" name="name" placeholder="Your Name" required="" type="text"/>
+                        <p class="error-message mt-2 text-sm text-red-600 dark:text-red-500">Please enter your name.</p>
+                    </div>
+                    <div class="relative">
+                        <label class="hidden" for="email">Email</label>
+                        <input class="block w-full rounded-lg border-subtle-light dark:border-subtle-dark/50 bg-background-light dark:bg-subtle-dark shadow-sm focus:border-primary focus:ring-primary text-base sm:text-sm p-3 placeholder:text-text-muted-light dark:placeholder:text-text-muted-dark peer" id="email" name="email" placeholder="Your Email" required="" type="email"/>
+                        <p class="error-message mt-2 text-sm text-red-600 dark:text-red-500">Please enter a valid email address.</p>
+                    </div>
+                    <div class="relative">
+                        <label class="hidden" for="message">Message</label>
+                        <textarea class="block w-full rounded-lg border-subtle-light dark:border-subtle-dark/50 bg-background-light dark:bg-subtle-dark shadow-sm focus:border-primary focus:ring-primary text-base sm:text-sm p-3 placeholder:text-text-muted-light dark:placeholder:text-text-muted-dark peer" id="message" name="message" placeholder="Your Message" required="" rows="5"></textarea>
+                        <p class="error-message mt-2 text-sm text-red-600 dark:text-red-500">Please enter your message.</p>
+                    </div>
+                    <button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-semibold leading-normal tracking-wide transition-all duration-300 ease-in-out hover:scale-105 hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/30 mt-2" type="submit">
+                        <span class="truncate">Send Message</span>
+                    </button>
+                </form>
+            </div>
+            <div class="space-y-8">
+                <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined text-primary text-3xl mt-1">location_on</span>
+                    <div>
+                        <h3 class="font-bold text-text-light dark:text-text-dark text-lg">Address</h3>
+                        <p class="text-text-muted-light dark:text-text-muted-dark text-base sm:text-base leading-relaxed">Thrill Top Journeys, Bhat Mohalla, Tapper Waripora, Pattan, Baramulla, Jammu & Kashmir 193121</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined text-primary text-3xl mt-1">phone</span>
+                    <div>
+                        <h3 class="font-bold text-text-light dark:text-text-dark text-lg">Phone</h3>
+                        <p class="text-text-muted-light dark:text-text-muted-dark text-base sm:text-base leading-relaxed">(+91)-8082821535</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined text-primary text-3xl mt-1">email</span>
+                    <div>
+                        <h3 class="font-bold text-text-light dark:text-text-dark text-lg">Email</h3>
+                        <p class="text-text-muted-light dark:text-text-muted-dark text-base sm:text-base leading-relaxed">info@neovant.in</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<footer class="bg-subtle-light dark:bg-subtle-dark border-t border-subtle-light dark:border-subtle-dark/50 py-12 px-4">
+    <div class="max-w-6xl mx-auto text-center text-text-muted-light dark:text-text-muted-dark">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-6">
+            <a class="hover:text-primary dark:hover:text-primary transition-colors" href="#home">Home</a>
+            <a class="hover:text-primary dark:hover:text-primary transition-colors" href="#services">Services</a>
+            <a class="hover:text-primary dark:hover:text-primary transition-colors" href="#about">About</a>
+            <a class="hover:text-primary dark:hover:text-primary transition-colors" href="#contact">Contact</a>
+            <a class="hover:text-primary dark:hover:text-primary transition-colors" href="privacy-policy.html">Privacy Policy</a>
+            <a href="/data-deletion.html" class="hover:text-primary transition-colors">Data Deletion</a>
+        </div>
+        
+        <!-- Legal Information -->
+        <div class="mt-8 pt-8 border-t border-subtle-light dark:border-subtle-dark/50">
+            <p class="text-sm font-semibold text-text-light dark:text-text-dark mb-2">
+                Neovant Advance Solutions Private Limited
+            </p>
+            <p class="text-xs mb-2">
+                CIN: U62099JK2025PTC018396 | UDYAM: UDYAM-JK-03-0047264
+            </p>
+            <p class="text-xs">
+                Registered under Companies Act, 2013 | MSME Certified Enterprise
+            </p>
+        </div>
+        
+        <p class="text-sm mt-6">© 2025 Neovant Advance Solutions. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</div>
+</div>
+
+<a class="fixed bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shadow-lg transition-all duration-300 ease-in-out hover:bg-primary-dark hover:scale-110" href="#home" id="back-to-top" aria-label="Back to top">
+    <span class="material-symbols-outlined">arrow_upward</span>
+</a>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.id === 'services') {
+                        const cards = entry.target.querySelectorAll('.service-card');
+                        cards.forEach(card => card.classList.add('service-card-visible'));
+                    } else {
+                         entry.target.classList.add('section-visible');
+                    }
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Back-to-top button logic
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        // Form validation and submission logic
+        const form = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            if (!form.checkValidity()) {
+                form.classList.add('was-validated');
+                return;
+            }
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Send to Email via FormSubmit
+            fetch('https://formsubmit.co/ajax/info@neovant.in', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    message: message,
+                    _subject: 'New Contact Form Submission from Neovant Website',
+                    _template: 'table'
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Email sent successfully');
+                
+                // Show success message
+                if (successMessage) {
+                    successMessage.classList.remove('opacity-0', '-translate-y-4', 'pointer-events-none');
+                    successMessage.classList.add('opacity-100', 'translate-y-0');
+                    
+                    setTimeout(() => {
+                        successMessage.classList.remove('opacity-100', 'translate-y-0');
+                        successMessage.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
+                    }, 3000);
+                }
+                
+                // Ask if user wants to send via WhatsApp
+                setTimeout(() => {
+                    const sendToWhatsApp = confirm('Message sent successfully! Would you also like to send this message via WhatsApp?');
+                    
+                    if (sendToWhatsApp) {
+                        const whatsappMessage = `*New Contact Form Submission*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Email:* ${encodeURIComponent(email)}%0A*Message:* ${encodeURIComponent(message)}`;
+                        const phoneNumber = '918082821535';
+                        window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, '_blank');
+                    }
+                    
+                    form.reset();
+                    form.classList.remove('was-validated');
+                }, 1000);
+                
+            })
+            .catch(error => {
+                console.log('Email error:', error);
+                alert('There was an error sending your message. Please try again.');
+            });
+            
+        }, false);
+        
+        // Dark mode toggle logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        const htmlEl = document.documentElement;
+        
+        const setTheme = (theme) => {
+            if (theme === 'dark') {
+                htmlEl.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                htmlEl.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        };
+        
+        const preferredTheme = localStorage.getItem('theme') || 'dark';
+        setTheme(preferredTheme);
+        
+        if (preferredTheme === 'light') {
+            htmlEl.classList.remove('dark');
+        }
+        
+        themeToggleBtn.addEventListener('click', () => {
+            if (htmlEl.classList.contains('dark')) {
+                setTheme('light');
+            } else {
+                setTheme('dark');
+            }
+        });
+        
+        themeToggleMobile.addEventListener('click', () => {
+            if (htmlEl.classList.contains('dark')) {
+                setTheme('light');
+            } else {
+                setTheme('dark');
+            }
+        });
+
+        // Credentials Modal Logic
+        const credentialsModal = document.getElementById('credentials-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const closeModal = document.getElementById('close-modal');
+
+        const hasSeenModal = sessionStorage.getItem('hasSeenCredentialsModal');
+
+        if (!hasSeenModal) {
+            setTimeout(() => {
+                credentialsModal.style.display = 'flex';
+            }, 500);
+            
+            const closeModalFunc = () => {
+                credentialsModal.style.opacity = '0';
+                setTimeout(() => {
+                    credentialsModal.style.display = 'none';
+                    sessionStorage.setItem('hasSeenCredentialsModal', 'true');
+                }, 300);
+            };
+            
+            closeModalBtn.addEventListener('click', closeModalFunc);
+            closeModal.addEventListener('click', closeModalFunc);
+            
+            credentialsModal.addEventListener('click', (e) => {
+                if (e.target === credentialsModal) {
+                    closeModalFunc();
+                }
+            });
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && credentialsModal.style.display === 'flex') {
+                    closeModalFunc();
+                }
+            });
+        } else {
+            credentialsModal.style.display = 'none';
+        }
+    });
+</script>
+</body>
+</html>
