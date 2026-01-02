@@ -2,17 +2,16 @@
 <html class="dark scroll-smooth" lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>Neovant Advanced Solutions - Premier Web Development, Mobile Apps & AI Solutions in Jammu & Kashmir</title>
 
 <meta name="description" content="Leading technology company in Jammu & Kashmir offering web development, mobile apps, ERP, CRM, AI solutions, and cloud services. UDYAM registered and Government of India certified.">
 <meta name="keywords" content="web development kashmir, mobile app development jammu, ERP solutions J&K, AI solutions india, cloud services baramulla, neovant">
 <meta name="robots" content="index, follow">
-
 <link rel="canonical" href="https://www.neovant.in/">
 
-<!-- SEO / Social (SAFE ADDITION) -->
+<!-- Open Graph -->
 <meta property="og:title" content="Neovant Advanced Solutions">
 <meta property="og:description" content="Premier Web, Mobile & AI Solutions Company in Jammu & Kashmir">
 <meta property="og:url" content="https://www.neovant.in/">
@@ -47,54 +46,106 @@ html, body { overflow-x: hidden; width: 100%; max-width: 100vw; }
 }
 
 .glass-effect {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255,255,255,0.1);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255,255,255,0.2);
 }
-
 .dark .glass-effect {
-  background: rgba(23, 30, 43, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(23,30,43,0.6);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
-.service-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+.service-card { transition: all .4s cubic-bezier(.4,0,.2,1); }
 .service-card:hover { transform: translateY(-8px) scale(1.02); }
 
 .animated-gradient {
-  background: linear-gradient(-45deg, #007BFF, #0056b3, #00D9FF, #007BFF);
+  background: linear-gradient(-45deg,#007BFF,#0056b3,#00D9FF,#007BFF);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 }
-
 @keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% { background-position:0% 50% }
+  50% { background-position:100% 50% }
+  100% { background-position:0% 50% }
 }
+
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease-out;
+}
+.mobile-menu.active { max-height: 500px; }
 
 #back-to-top {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-  transition: 0.3s;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(20px);
+  transition:.3s;
 }
 #back-to-top.visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+  opacity:1;
+  visibility:visible;
+  transform:none;
 }
 </style>
 </head>
 
 <body class="font-sans bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased">
 
-<!-- ===================== -->
-<!-- HEADER (UNCHANGED) -->
-<!-- ===================== -->
+<!-- ================= CREDENTIALS MODAL ================= -->
+<div class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4" id="credentials-modal">
+  <div class="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-3xl w-full p-8">
+    <button id="close-modal" class="absolute top-4 right-4">
+      <span class="material-symbols-outlined text-3xl">close</span>
+    </button>
+    <h2 class="text-3xl font-bold text-center mb-6">Officially Registered & Certified</h2>
+    <p class="text-center text-gray-500 mb-6">Government of India Recognized Enterprise</p>
+    <p class="text-center font-semibold">CIN: U62099JK2025PTC018396</p>
+    <p class="text-center font-semibold mb-6">UDYAM: UDYAM-JK-03-0047264</p>
+    <button id="close-modal-btn" class="w-full py-3 rounded-full bg-blue-600 text-white font-semibold">
+      Continue to Website
+    </button>
+  </div>
+</div>
+
+<!-- ================= HEADER ================= -->
 <header class="sticky top-0 z-50 glass-effect border-b border-gray-200 dark:border-gray-700">
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
     <h2 class="font-bold text-xl">Neovant Advanced Solutions</h2>
-    <nav class="hidden lg:flex gap-6">
+
+    <div class="hidden lg:flex items-center gap-6">
+      <nav class="flex gap-6">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <!-- THEME TOGGLE -->
+      <button id="theme-toggle" class="p-2 rounded-full">
+        <span class="material-symbols-outlined dark:hidden">light_mode</span>
+        <span class="material-symbols-outlined hidden dark:inline">dark_mode</span>
+      </button>
+
+      <a href="#contact" class="px-5 py-2 rounded-full animated-gradient text-white font-semibold">
+        Get Quote
+      </a>
+    </div>
+
+    <!-- MOBILE -->
+    <div class="flex lg:hidden gap-2">
+      <button id="theme-toggle-mobile" class="p-2">
+        <span class="material-symbols-outlined dark:hidden">light_mode</span>
+        <span class="material-symbols-outlined hidden dark:inline">dark_mode</span>
+      </button>
+      <button id="mobile-menu-toggle" class="p-2">
+        <span class="material-symbols-outlined" id="menu-icon">menu</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu lg:hidden" id="mobile-menu">
+    <nav class="flex flex-col gap-2 p-4">
       <a href="#home">Home</a>
       <a href="#services">Services</a>
       <a href="#about">About</a>
@@ -103,9 +154,7 @@ html, body { overflow-x: hidden; width: 100%; max-width: 100vw; }
   </div>
 </header>
 
-<!-- ===================== -->
-<!-- HERO -->
-<!-- ===================== -->
+<!-- ================= HERO ================= -->
 <section id="home" class="min-h-screen flex items-center justify-center text-center">
   <div>
     <h1 class="text-5xl md:text-6xl font-extrabold gradient-text mb-6">
@@ -120,43 +169,36 @@ html, body { overflow-x: hidden; width: 100%; max-width: 100vw; }
   </div>
 </section>
 
-<!-- ===================== -->
-<!-- SERVICES (UNCHANGED) -->
-<!-- ===================== -->
+<!-- ================= SERVICES ================= -->
 <section id="services" class="py-20 bg-gray-50 dark:bg-gray-800">
   <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
     <div class="service-card p-6 bg-white dark:bg-gray-700 rounded-xl shadow">
-      <h3 class="font-bold text-xl mb-2">Web Development</h3>
-      <p>Responsive, secure, and scalable web applications.</p>
+      <h3 class="font-bold text-xl">Web Development</h3>
     </div>
     <div class="service-card p-6 bg-white dark:bg-gray-700 rounded-xl shadow">
-      <h3 class="font-bold text-xl mb-2">Mobile App Development</h3>
-      <p>High-performance Android & iOS applications.</p>
+      <h3 class="font-bold text-xl">Mobile Apps</h3>
     </div>
     <div class="service-card p-6 bg-white dark:bg-gray-700 rounded-xl shadow">
-      <h3 class="font-bold text-xl mb-2">AI, ERP & CRM</h3>
-      <p>Enterprise-grade automation and intelligence.</p>
+      <h3 class="font-bold text-xl">AI / ERP / CRM</h3>
     </div>
   </div>
 </section>
 
-<!-- ===================== -->
-<!-- CONTACT (MINIMAL ADDITION) -->
-<!-- ===================== -->
+<!-- ================= CONTACT ================= -->
 <section id="contact" class="py-20">
   <div class="max-w-4xl mx-auto px-6">
     <h2 class="text-4xl font-bold mb-6 text-center">Get In Touch</h2>
 
     <form id="contact-form" class="space-y-4">
-      <input required placeholder="Your Name" class="w-full p-3 rounded border">
-      <input required type="email" placeholder="Your Email" class="w-full p-3 rounded border">
-      <textarea required placeholder="Your Message" rows="4" class="w-full p-3 rounded border"></textarea>
+      <input required placeholder="Name" class="w-full p-3 rounded border">
+      <input required type="email" placeholder="Email" class="w-full p-3 rounded border">
+      <textarea required placeholder="Message" rows="4" class="w-full p-3 rounded border"></textarea>
       <button class="w-full py-3 rounded-full animated-gradient text-white font-semibold">
         Send Message
       </button>
     </form>
 
-    <!-- ADDED: Compliance note -->
+    <!-- ✅ COMPLIANCE ADDITION -->
     <p class="text-sm text-gray-500 mt-6 text-center">
       By contacting us, you agree to our
       <a href="/privacy-policy.html" class="text-blue-600 underline">Privacy Policy</a>
@@ -166,15 +208,12 @@ html, body { overflow-x: hidden; width: 100%; max-width: 100vw; }
   </div>
 </section>
 
-<!-- ===================== -->
-<!-- FOOTER (MINIMAL ADDITION) -->
-<!-- ===================== -->
+<!-- ================= FOOTER ================= -->
 <footer class="bg-gray-100 dark:bg-gray-800 py-12 text-center">
   <div class="flex flex-wrap justify-center gap-6 mb-4">
     <a href="#home">Home</a>
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
-    <!--  ADDED LINKS -->
     <a href="/privacy-policy.html">Privacy Policy</a>
     <a href="/data-deletion.html">Data Deletion</a>
   </div>
@@ -187,13 +226,44 @@ html, body { overflow-x: hidden; width: 100%; max-width: 100vw; }
 
 <a href="#home" id="back-to-top"
    class="fixed bottom-8 right-8 w-12 h-12 rounded-full animated-gradient text-white flex items-center justify-center">
-  ↑
+↑
 </a>
 
 <script>
-const backToTop = document.getElementById("back-to-top");
-window.addEventListener("scroll", () => {
-  backToTop.classList.toggle("visible", window.scrollY > 300);
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* THEME */
+  const html = document.documentElement;
+  const setTheme = t => {
+    html.classList.toggle('dark', t === 'dark');
+    localStorage.setItem('theme', t);
+  };
+  setTheme(localStorage.getItem('theme') || 'dark');
+  ['theme-toggle','theme-toggle-mobile'].forEach(id => {
+    const b=document.getElementById(id);
+    if(b) b.onclick=()=>setTheme(html.classList.contains('dark')?'light':'dark');
+  });
+
+  /* MOBILE MENU */
+  const menu=document.getElementById('mobile-menu');
+  const icon=document.getElementById('menu-icon');
+  document.getElementById('mobile-menu-toggle').onclick=()=>{
+    menu.classList.toggle('active');
+    icon.textContent = menu.classList.contains('active')?'close':'menu';
+  };
+
+  /* BACK TO TOP */
+  const btt=document.getElementById('back-to-top');
+  window.addEventListener('scroll',()=>btt.classList.toggle('visible',window.scrollY>300));
+
+  /* MODAL */
+  const modal=document.getElementById('credentials-modal');
+  if(!sessionStorage.getItem('seenModal')){
+    modal.style.display='flex';
+    const close=()=>{modal.style.display='none';sessionStorage.setItem('seenModal','1')};
+    document.getElementById('close-modal').onclick=close;
+    document.getElementById('close-modal-btn').onclick=close;
+  }
 });
 </script>
 
