@@ -4,7 +4,57 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Neovant Advance Solutions — Engineering Tomorrow</title>
-<meta name="description" content="Neovant Advance Solutions. Web, Mobile, AI, Cloud, ERP & CRM. Jammu & Kashmir, India.">
+<meta name="description" content="Neovant Advance Solutions — Web, Mobile, AI, Cloud, ERP & CRM engineering studio based in Jammu & Kashmir, India. Builders of PMU R&B, the official J&K Government infrastructure platform.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.neovant.in">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230066cc'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='18' font-weight='400' fill='white'>N</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='40' fill='%230066cc'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='110' font-weight='400' fill='white'>N</text></svg>">
+<meta name="theme-color" content="#000000">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.neovant.in">
+<meta property="og:title" content="Neovant Advance Solutions — Engineering Tomorrow">
+<meta property="og:description" content="Web, Mobile, AI, Cloud, ERP & CRM engineering studio based in Jammu & Kashmir. Builders of PMU R&B — the official J&K Government infrastructure platform.">
+<meta property="og:image" content="https://www.neovant.in/og-image.png">
+<meta property="og:locale" content="en_IN">
+<meta property="og:site_name" content="Neovant Advance Solutions">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Neovant Advance Solutions — Engineering Tomorrow">
+<meta name="twitter:description" content="Web, Mobile, AI, Cloud, ERP & CRM engineering studio based in Jammu & Kashmir, India.">
+<meta name="twitter:image" content="https://www.neovant.in/og-image.png">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Neovant Advance Solutions",
+  "url": "https://www.neovant.in",
+  "logo": "https://www.neovant.in/og-image.png",
+  "description": "Web, Mobile, AI, Cloud, ERP & CRM engineering studio based in Jammu & Kashmir, India.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Nigeen Bagh Krankshivan Colony",
+    "addressLocality": "Sopore",
+    "addressRegion": "Jammu & Kashmir",
+    "postalCode": "193201",
+    "addressCountry": "IN"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-80828-21535",
+    "contactType": "customer service",
+    "availableLanguage": ["English", "Urdu", "Hindi"]
+  },
+  "sameAs": ["https://www.neovant.in"]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
@@ -54,6 +104,34 @@ a { text-decoration:none; color:inherit; }
 ::selection { background:var(--blue); color:#fff; }
 ::-webkit-scrollbar { width:1px; background:var(--ink); }
 ::-webkit-scrollbar-thumb { background:var(--dim1); }
+
+/* ── Focus visible — keyboard navigation accessibility */
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Skip to content link — screen readers & keyboard nav */
+.skip-link {
+  position: fixed;
+  top: -100%;
+  left: 16px;
+  z-index: 9999;
+  padding: 10px 20px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 0 0 8px 8px;
+  transition: top .2s;
+}
+.skip-link:focus { top: 0; outline: none; }
+
+/* ── Touch action — removes 300ms tap delay on mobile */
+a, button, .bc, .pill, .ct-alt-link, .num-cell, .pi {
+  touch-action: manipulation;
+}
 
 /* ════════════════════════════════════════════
    CURSOR
@@ -125,7 +203,7 @@ body.ch #cur-ring { opacity:0; }
 /* FIX: added position:relative so ::after pseudo-element anchors correctly */
 .n-link  { position:relative; font-size:12px; font-weight:300; letter-spacing:.03em; color:rgba(255,255,255,.72); transition:color .25s; }
 .n-link:hover { color:var(--white); }
-.n-cta   { font-size:12px; font-weight:400; color:rgba(255,255,255,.85); padding:7px 18px; border-radius:980px; border:.5px solid rgba(255,255,255,.22); transition:all .3s; }
+.n-cta   { font-size:12px; font-weight:400; color:rgba(255,255,255,.85); padding:7px 18px; border-radius:980px; border:.5px solid rgba(255,255,255,.22); transition:border-color .3s, background .3s, color .3s; }
 .n-cta:hover { border-color:rgba(255,255,255,.55); background:rgba(255,255,255,.04); }
 
 /* ════════════════════════════════════════════
@@ -211,7 +289,7 @@ body.ch #cur-ring { opacity:0; }
   background:transparent; color:rgba(255,255,255,.7);
   font-size:13px; font-weight:300;
   border:.5px solid rgba(255,255,255,.2);
-  transition:all .3s;
+  transition:color .3s, border-color .3s, background .3s;
 }
 .btn-ghost:hover { color:var(--white); border-color:rgba(255,255,255,.5); }
 .i-arr { display:inline-block; transition:transform .35s var(--spring); }
@@ -365,7 +443,7 @@ body.ch #cur-ring { opacity:0; }
   padding:6px 14px; border-radius:980px;
   background:var(--snow); border:.5px solid var(--mist);
   font-size:12px; font-weight:400; color:var(--dim1);
-  transition:all .25s; cursor:default;
+  transition:border-color .25s, color .25s, background .25s; cursor:default;
 }
 .pill:hover { border-color:var(--blue); color:var(--blue); background:var(--blue-g); }
 .pill svg { width:14px; height:14px; flex-shrink:0; }
@@ -386,7 +464,7 @@ body.ch #cur-ring { opacity:0; }
 .pi-h { font-family:var(--serif); font-weight:300; font-size:clamp(18px,2vw,26px); letter-spacing:-.02em; margin-bottom:10px; transition:color .3s; }
 .pi:hover .pi-h { color:var(--blue-h); }
 .pi-p { font-size:13.5px; font-weight:300; color:var(--dim3); line-height:1.75; max-width:560px; }
-.pi-arr { font-size:16px; color:var(--dim1); text-align:right; padding-top:5px; opacity:0; transform:translateX(-8px); transition:all .4s var(--spring); }
+.pi-arr { font-size:16px; color:var(--dim1); text-align:right; padding-top:5px; opacity:0; transform:translateX(-8px); transition:opacity .4s var(--spring), transform .4s var(--spring), color .3s; }
 .pi:hover .pi-arr { opacity:1; transform:translateX(0); color:var(--blue-h); }
 
 /* ════════════════════════════════════════════
@@ -501,7 +579,7 @@ body.ch #cur-ring { opacity:0; }
   flex:1; padding:14px 20px; border-radius:12px;
   background:rgba(255,255,255,.03); border:.5px solid rgba(255,255,255,.07);
   display:flex; flex-direction:column; gap:6px;
-  transition:all .3s;
+  transition:background .3s, border-color .3s;
 }
 .ct-alt-link:hover { background:rgba(255,255,255,.055); border-color:rgba(255,255,255,.14); }
 .ct-alt-label { font-size:9.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--dim3); font-weight:400; }
@@ -945,7 +1023,7 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
   color: var(--white);
   font-size: 13px;
   font-weight: 400;
-  transition: all .3s;
+  transition: background .3s, border-color .3s, transform .3s;
 }
 .cs-store-btn:hover {
   background: rgba(255,255,255,.09);
@@ -1687,6 +1765,9 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
 </head>
 <body>
 
+<!-- Skip to content — keyboard / screen reader navigation -->
+<a href="#hero" class="skip-link">Skip to content</a>
+
 <!-- ━━━━━━━━━━━━━━━━ CURSOR ━━━━━━━━━━━━━━━━ -->
 <div id="cur-dot"></div>
 <div id="cur-ring"></div>
@@ -2230,7 +2311,7 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
   <p class="cta-sub sr">Tell us about your project. We'll show you how to make it exceptional.</p>
   <div class="cta-acts sr">
     <a href="#contact" class="btn-solid" style="font-size:14px;padding:13px 32px">Start a Project <span class="i-arr">›</span></a>
-    <a id="cta-email-btn" href="#" class="btn-ghost" style="font-size:14px;padding:12px 28px">info@neovant.in</a>
+    <a id="cta-email-btn" href="#" class="btn-ghost" style="font-size:14px;padding:12px 28px"><span class="__cf_email__" data-cfemail="1f767179705f717a70697e716b317671">[email&#160;protected]</span></a>
   </div>
 </section>
 
@@ -2253,7 +2334,7 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
         </div>
         <div class="ct-row">
           <span class="ct-lbl">Email</span>
-          <span class="ct-val"><a id="ct-email-link" href="mailto:info@neovant.in">info@neovant.in</a></span>
+          <span class="ct-val"><a id="ct-email-link" href="/cdn-cgi/l/email-protection#036a6d656c436d666c75626d772d6a6d"><span class="__cf_email__" data-cfemail="80e9eee6efc0eee5eff6e1eef4aee9ee">[email&#160;protected]</span></a></span>
         </div>
         <div class="ct-row">
           <span class="ct-lbl">Web</span>
@@ -2296,9 +2377,9 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
           <span class="ct-alt-label">Call</span>
           <span class="ct-alt-val">+91 80828 21535</span>
         </a>
-        <a id="ct-email-alt" href="mailto:info@neovant.in" class="ct-alt-link">
+        <a id="ct-email-alt" href="/cdn-cgi/l/email-protection#51383f373e113f343e27303f257f383f" class="ct-alt-link">
           <span class="ct-alt-label">Email</span>
-          <span class="ct-alt-val">info@neovant.in</span>
+          <span class="ct-alt-val"><span class="__cf_email__" data-cfemail="b2dbdcd4ddf2dcd7ddc4d3dcc69cdbdc">[email&#160;protected]</span></span>
         </a>
         <a href="https://www.neovant.in" target="_blank" class="ct-alt-link">
           <span class="ct-alt-label">Website</span>
@@ -2339,7 +2420,7 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
 </button>
 
 <!-- ━━━━━━━━━━━━━━━━ SCRIPTS ━━━━━━━━━━━━━━━━ -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ─ EMAIL LINKS ── */
 (function() {
   const h = 'mailto:info@neovant.in';
@@ -2383,6 +2464,16 @@ document.querySelectorAll('#hero,.philo,.philo-dark,.philo-light,#services,#proc
   .forEach(el=>curColorObs.observe(el));
 
 /* ─ SMOOTH SCROLL ──── */
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+  link.addEventListener('click', e=>{
+    const target = document.querySelector(link.getAttribute('href'));
+    if(!target) return;
+    e.preventDefault();
+    const navH = document.getElementById('nav').offsetHeight;
+    const top  = target.getBoundingClientRect().top + window.scrollY - navH;
+    window.scrollTo({ top, behavior:'smooth' });
+  });
+});
 document.querySelectorAll('a[href^="#"]').forEach(link=>{
   link.addEventListener('click', e=>{
     const target = document.querySelector(link.getAttribute('href'));
@@ -2619,6 +2710,15 @@ const activeObs = new IntersectionObserver(entries => {
 
 sections.forEach(s => activeObs.observe(s));
 
+/* ─ OBSERVER CLEANUP — disconnect on page hide to prevent memory leaks ── */
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'hidden') {
+    curColorObs.disconnect();
+    io.disconnect();
+    activeObs.disconnect();
+  }
+});
+
 /* ─ PAGE LOAD FADE IN ───────────────── */
 document.documentElement.style.opacity = '0';
 document.documentElement.style.transition = 'opacity .5s ease';
@@ -2632,9 +2732,8 @@ document.querySelectorAll('.bc').forEach(card => {
   card.addEventListener('mousemove', e => {
     if (colored) return;
     const r  = card.getBoundingClientRect();
-    const px = ((e.clientX - r.left) / r.width)  * 100;
+      const px = ((e.clientX - r.left) / r.width)  * 100;
     const py = ((e.clientY - r.top)  / r.height) * 100;
-    /* FIX: reset to explicit base color instead of empty string to avoid flash */
     card.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(0,102,204,.04) 0%, var(--pure) 55%)`;
   });
   card.addEventListener('mouseleave', () => {
