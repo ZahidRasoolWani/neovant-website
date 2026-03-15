@@ -1601,7 +1601,7 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
 @media (max-width: 390px) {
   .h-inner { padding: 0 4%; }
 }
-   /* ════════════════════════════════════════════
+/* ════════════════════════════════════════════
    WORK SECTIONS — MOBILE FIX
 ════════════════════════════════════════════ */
 @media (max-width: 768px) {
@@ -1612,7 +1612,6 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
     gap: 40px;
   }
 
-  /* Reset the mirrored card column order on Mandi Ledger */
   .ml-cards-col {
     order: 0 !important;
   }
@@ -1620,13 +1619,19 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
   .cs-right,
   .ml-cards,
   .ta-cards {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr !important;
+  }
+
+  .cs-card-wide,
+  .ml-card-wide,
+  .ta-card-wide {
+    grid-column: span 1 !important;
   }
 
   .cs-card,
   .ml-card,
   .ta-card {
-    padding: 24px 18px;
+    padding: 24px 20px;
   }
 
   .cs-card-val,
@@ -1640,20 +1645,6 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
   .ta-body {
     max-width: 100%;
   }
-}
-
-@media (max-width: 480px) {
-  .cs-right,
-  .ml-cards,
-  .ta-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .cs-card-wide,
-  .ml-card-wide,
-  .ta-card-wide {
-    grid-column: span 1;
-  }
 
   .cs-trust,
   .ml-status {
@@ -1665,7 +1656,6 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
 </style>
 </head>
 <body>
-
 <div id="cur-dot"></div>
 <div id="cur-ring"></div>
 
