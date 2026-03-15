@@ -160,7 +160,7 @@ body.ch #cur-ring { opacity:0; }
   position:absolute; inset:0; pointer-events:none; opacity:.028;
   background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23f)'/%3E%3C/svg%3E");
 }
-.h-inner { position:relative; z-index:3; text-align:center; padding:0 6%; max-width:1100px; width:100%; will-change:transform,opacity; }
+.h-inner { position:relative; z-index:3; text-align:center; padding:0 6%; max-width:1100px; width:100%; margin:0 auto; will-change:transform,opacity; }
 
 .h-eyebrow {
   display:inline-flex; align-items:center; gap:12px;
@@ -169,7 +169,9 @@ body.ch #cur-ring { opacity:0; }
   animation:fadeUp .9s .15s var(--ease-out) both;
   white-space:nowrap;
 }
-.h-tick { width:24px; height:.5px; background:var(--dim2); flex-shrink:0; }
+/* short version hidden on desktop, shown on mobile */
+.h-eye-short { display: none; }
+.h-eye-full  { display: inline; }
 
 .h-title {
   font-family:var(--serif); font-weight:300;
@@ -734,41 +736,61 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
   .n-links   { display:none; }
   .n-hamburger { display:flex; }
   /* Hero */
-  #hero { padding-left: 0; padding-right: 0; }
-  .h-inner { padding: 0 5%; width: 100%; overflow: hidden; }
-  .h-eyebrow {
-    font-size: 9px;
-    letter-spacing: .16em;
-    gap: 8px;
-    white-space: normal;
-    text-align: center;
-    justify-content: center;
-    margin-bottom: 28px;
+  #hero {
+    min-height: 100svh; /* use small viewport height on mobile */
+    height: 100svh;
+    overflow: hidden;
   }
+  .h-inner {
+    padding: 0 6%;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+  .h-eyebrow {
+    display: block; /* stack as block, no flex overflow */
+    font-size: 9px;
+    letter-spacing: .14em;
+    white-space: normal;
+    word-break: break-word;
+    text-align: center;
+    margin-bottom: 24px;
+    padding: 0 4%;
+  }
+  .h-eye-full  { display: none; }
+  .h-eye-short { display: inline; }
   .h-tick { display: none; }
   .h-title {
-    font-size: clamp(44px, 12vw, 72px);
-    letter-spacing: -.03em;
+    font-size: clamp(40px, 10.5vw, 68px);
+    letter-spacing: -.025em;
     line-height: .95;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
+    word-break: keep-all;
+    overflow-wrap: normal;
   }
   .h-sub {
-    font-size: 15px;
+    font-size: 14.5px;
+    line-height: 1.72;
     max-width: 100%;
-    margin-bottom: 36px;
-    padding: 0 4%;
+    margin-bottom: 32px;
+    padding: 0 2%;
   }
   .h-acts {
     flex-direction: column;
     align-items: center;
     width: 100%;
     gap: 10px;
+    padding: 0 4%;
   }
   .btn-solid, .btn-ghost {
     width: 100%;
-    max-width: 300px;
+    max-width: 100%;
     justify-content: center;
+    box-sizing: border-box;
   }
+  .h-scroll { bottom: 20px; }
+  .h-scroll-bar { height: 36px; }
 
   /* Philosophy */
   .philo { padding:90px 6%; min-height:auto; }
@@ -810,8 +832,8 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
    RESPONSIVE — 480px small mobile
 ════════════════════════════════════════════ */
 @media(max-width:480px){
-  .h-eyebrow { font-size:9px; letter-spacing:.12em; }
-  .h-title   { font-size: clamp(38px, 11vw, 56px); }
+  .h-eyebrow { font-size:8.5px; letter-spacing:.1em; }
+  .h-title   { font-size: clamp(36px, 10vw, 52px); letter-spacing: -.02em; }
   .bento     { gap:8px; }
   .bc        { padding:28px 22px 24px; }
   .bc-h      { font-size:clamp(20px,6vw,28px); }
@@ -833,8 +855,9 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
    RESPONSIVE — 360px very small (Samsung Galaxy S etc)
 ════════════════════════════════════════════ */
 @media(max-width:360px){
-  .h-title   { font-size: 38px; letter-spacing: -.025em; }
-  .h-sub     { font-size:14px; }
+  .h-title   { font-size: 36px; letter-spacing: -.02em; line-height: 1.0; }
+  .h-sub     { font-size:13.5px; }
+  .h-acts    { padding: 0 2%; }
   .btn-solid,.btn-ghost { font-size:13px; padding:11px 22px; }
   .bc        { padding:24px 18px 20px; }
   .n-drawer  { padding:12px 18px 22px; }
@@ -889,7 +912,8 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
   <div class="h-inner" id="h-inner">
     <p class="h-eyebrow">
       <span class="h-tick"></span>
-      Neovant Advance Solutions &nbsp;·&nbsp; Jammu &amp; Kashmir, India
+      <span class="h-eye-full">Neovant Advance Solutions &nbsp;·&nbsp; Jammu &amp; Kashmir, India</span>
+      <span class="h-eye-short">Jammu &amp; Kashmir, India</span>
       <span class="h-tick"></span>
     </p>
     <h1 class="h-title">Engineering<br><em>Tomorrow.</em></h1>
@@ -1153,7 +1177,7 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
   <p class="cta-sub sr">Tell us about your project. We'll show you how to make it exceptional.</p>
   <div class="cta-acts sr">
     <a href="#contact" class="btn-solid" style="font-size:14px;padding:13px 32px">Start a Project <span class="i-arr">›</span></a>
-    <a href="/cdn-cgi/l/email-protection#85ecebe3eac5ebe0eaf3e4ebf1abeceb" class="btn-ghost" style="font-size:14px;padding:12px 28px"><span class="__cf_email__" data-cfemail="d2bbbcb4bd92bcb7bda4b3bca6fcbbbc">[email&#160;protected]</span></a>
+    <a id="cta-email-btn" href="#" class="btn-ghost" style="font-size:14px;padding:12px 28px">info@neovant.in</a>
   </div>
 </section>
 
@@ -1176,7 +1200,7 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
         </div>
         <div class="ct-row">
           <span class="ct-lbl">Email</span>
-          <span class="ct-val"><a href="/cdn-cgi/l/email-protection#1a73747c755a747f756c7b746e347374"><span class="__cf_email__" data-cfemail="026b6c646d426c676d74636c762c6b6c">[email&#160;protected]</span></a></span>
+          <span class="ct-val"><a id="ct-email-link" href="#">info@neovant.in</a></span>
         </div>
         <div class="ct-row">
           <span class="ct-lbl">Web</span>
@@ -1219,9 +1243,9 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
           <span class="ct-alt-label">Call</span>
           <span class="ct-alt-val">+91 80828 21535</span>
         </a>
-        <a href="/cdn-cgi/l/email-protection#0a63646c654a646f657c6b647e246364" class="ct-alt-link">
+        <a id="ct-email-alt" href="#" class="ct-alt-link">
           <span class="ct-alt-label">Email</span>
-          <span class="ct-alt-val"><span class="__cf_email__" data-cfemail="d2bbbcb4bd92bcb7bda4b3bca6fcbbbc">[email&#160;protected]</span></span>
+          <span class="ct-alt-val">info@neovant.in</span>
         </a>
         <a href="https://www.neovant.in" target="_blank" class="ct-alt-link">
           <span class="ct-alt-label">Website</span>
@@ -1254,7 +1278,20 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
 </footer>
 
 <!-- ━━━━━━━━━━━━━━━━ SCRIPTS ━━━━━━━━━━━━━━━━ -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
+/* ─ EMAIL LINKS (assembled to avoid proxy obfuscation) ── */
+(function() {
+  const u = 'info';
+  const d = 'neovant.in';
+  const e = u + '@' + d;
+  const h = 'mailto:' + e;
+
+  const ids = ['cta-email-btn', 'ct-email-link', 'ct-email-alt'];
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.setAttribute('href', h);
+  });
+})();
 /* ─ CURSOR ─────────────────────────── */
 const dot=document.getElementById('cur-dot'), ring=document.getElementById('cur-ring');
 let mx=0,my=0,rx=0,ry=0;
