@@ -1,188 +1,645 @@
 <!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — R&B Ganderbal | Neovant Advance Solutions</title>
+<meta name="description" content="Privacy Policy for the R&B Ganderbal Android application developed by Neovant Advance Solutions Private Limited.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.neovant.in/privacy-policy.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 
-  <!-- SEO Meta Tags -->
-  <title>Privacy Policy | R&B Ganderbal</title>
-  <meta name="description" content="Privacy Policy for R&B Ganderbal Android application developed by Neovant Advance Solutions Private Limited.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.neovant.in/privacy-policy.html">
+<style>
+/* ════════════════════════════════════════════
+   FOUNDATION — identical to index.html
+════════════════════════════════════════════ */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --black:  #000;
+  --ink:    #080808;
+  --ink2:   #101010;
+  --ink3:   #181818;
+  --ink4:   #232323;
+  --dim1:   #3a3a3a;
+  --dim2:   #666;
+  --dim3:   #888;
+  --dim4:   #aaa;
+  --silver: #c8c8c8;
+  --fog:    #ddd;
+  --mist:   #e8e8e8;
+  --snow:   #f2f2f2;
+  --white:  #fafafa;
+  --pure:   #ffffff;
+  --blue:   #0066cc;
+  --blue-h: #0071e3;
+  --blue-g: rgba(0,102,204,.07);
+  --green:  #25D366;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans:  'DM Sans', -apple-system, sans-serif;
+  --ease-out:    cubic-bezier(0.16,1,0.3,1);
+  --ease-in-out: cubic-bezier(0.4,0,0.2,1);
+  --spring:      cubic-bezier(0.34,1.56,0.64,1);
+}
+html { scroll-behavior:smooth; font-size:16px; opacity:0; transition:opacity .5s ease; }
+body {
+  font-family: var(--sans);
+  background: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { text-decoration:none; color:inherit; }
+::selection { background:var(--blue); color:#fff; }
+::-webkit-scrollbar { width:1px; background:var(--ink); }
+::-webkit-scrollbar-thumb { background:var(--dim1); }
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+/* ════════════════════════════════════════════
+   NAV
+════════════════════════════════════════════ */
+#nav {
+  position:fixed; top:0; left:0; right:0; z-index:800;
+  height:50px; display:flex; align-items:center; justify-content:space-between;
+  padding:0 32px;
+  background:rgba(8,8,8,.84);
+  backdrop-filter:blur(28px) saturate(160%);
+  border-bottom:.5px solid rgba(255,255,255,.06);
+}
+.n-word {
+  font-family:var(--serif); font-weight:400; font-size:15px;
+  letter-spacing:.01em; color:var(--white); white-space:nowrap;
+}
+.n-links { position:absolute; left:50%; transform:translateX(-50%); display:flex; gap:34px; list-style:none; }
+.n-link  { font-size:12px; font-weight:300; letter-spacing:.03em; color:rgba(255,255,255,.72); transition:color .25s; position:relative; padding-bottom:2px; }
+.n-link:hover { color:var(--white); }
+.n-link::after { content:''; position:absolute; bottom:0; left:0; right:0; height:.5px; background:var(--white); opacity:0; transition:opacity .3s; }
+.n-link:hover::after { opacity:.4; }
+.n-cta { font-size:12px; font-weight:400; color:rgba(255,255,255,.85); padding:7px 18px; border-radius:980px; border:.5px solid rgba(255,255,255,.22); transition:all .3s; }
+.n-cta:hover { border-color:rgba(255,255,255,.55); background:rgba(255,255,255,.04); }
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+/* Hamburger */
+button.n-hamburger {
+  display:none;
+  flex-direction:column; justify-content:center; gap:5px;
+  width:36px; height:36px; cursor:pointer;
+  background:none; border:none; padding:6px;
+  border-radius:8px; transition:background .25s;
+  -webkit-tap-highlight-color:transparent;
+}
+button.n-hamburger span {
+  display:block; width:100%; height:.5px;
+  background:rgba(255,255,255,.8); border-radius:1px;
+  transition:transform .35s var(--ease-out), opacity .25s;
+  transform-origin:center;
+}
+button.n-hamburger.open span:nth-child(1) { transform:translateY(5.5px) rotate(45deg); }
+button.n-hamburger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
+button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(-45deg); }
 
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            primary: "#007BFF",
-            background-light: "#FFFFFF",
-            background-dark: "#0A0F1A",
-            subtle-light: "#F3F4F6",
-            subtle-dark: "#171E2B",
-            text-light: "#0A0F1A",
-            text-dark: "#E5E7EB",
-            text-muted-light: "#6B7280",
-            text-muted-dark: "#9CA3AF"
-          },
-          fontFamily: {
-            display: ["Inter", "sans-serif"]
-          }
-        }
-      }
-    }
-  </script>
+.n-drawer {
+  position:fixed; top:50px; left:0; right:0; z-index:700;
+  background:rgba(8,8,8,.97);
+  backdrop-filter:blur(28px) saturate(160%);
+  border-bottom:.5px solid rgba(255,255,255,.07);
+  padding:0 24px; max-height:0; overflow:hidden;
+  transition:max-height .4s var(--ease-out), padding .4s var(--ease-out);
+}
+.n-drawer.open { max-height:400px; padding:16px 24px 28px; }
+.n-drawer-links { display:flex; flex-direction:column; gap:2px; margin-bottom:16px; }
+.n-drawer-link {
+  font-size:22px; font-family:var(--serif); font-weight:300;
+  letter-spacing:-.02em; color:rgba(255,255,255,.75);
+  padding:10px 0; border-bottom:.5px solid rgba(255,255,255,.06);
+  display:block; transition:color .25s, padding-left .3s var(--ease-out);
+}
+.n-drawer-link:last-child { border-bottom:none; }
+.n-drawer-link:hover { color:var(--white); padding-left:8px; }
+.n-drawer-cta {
+  display:inline-flex; align-items:center; gap:7px;
+  padding:12px 28px; border-radius:980px;
+  background:var(--blue); color:#fff;
+  font-size:14px; font-weight:400; border:none; margin-top:4px;
+  transition:background .25s;
+}
+.n-drawer-cta:hover { background:var(--blue-h); }
 
-  <style>
-    body { font-family: Inter, sans-serif; }
-  </style>
+/* ════════════════════════════════════════════
+   PAGE HERO
+════════════════════════════════════════════ */
+.page-hero {
+  padding:140px 5% 80px;
+  border-bottom:.5px solid rgba(255,255,255,.06);
+  position:relative; overflow:hidden;
+}
+.page-hero::before {
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(ellipse 60% 80% at 50% 0%, rgba(0,102,204,.1) 0%, transparent 65%);
+}
+.page-hero-inner { max-width:760px; position:relative; z-index:1; }
+
+.page-breadcrumb {
+  display:flex; align-items:center; gap:8px;
+  font-size:11px; font-weight:300; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--dim3); margin-bottom:28px;
+}
+.page-breadcrumb a { color:var(--dim3); transition:color .25s; }
+.page-breadcrumb a:hover { color:var(--white); }
+.page-breadcrumb-sep { color:var(--dim1); }
+
+.page-tag {
+  display:inline-block; font-size:10px; font-weight:400;
+  letter-spacing:.22em; text-transform:uppercase;
+  color:var(--blue); margin-bottom:20px;
+}
+.page-title {
+  font-family:var(--serif); font-weight:300;
+  font-size:clamp(32px,5vw,58px);
+  letter-spacing:-.03em; line-height:1.05;
+  color:var(--white); margin-bottom:20px;
+}
+.page-title em { font-style:italic; color:rgba(255,255,255,.3); }
+.page-meta { font-size:12px; font-weight:300; color:var(--dim3); letter-spacing:.05em; }
+
+/* ════════════════════════════════════════════
+   TABLE OF CONTENTS
+════════════════════════════════════════════ */
+.toc {
+  background:rgba(255,255,255,.025);
+  border:.5px solid rgba(255,255,255,.07);
+  border-radius:16px; padding:28px 32px;
+  margin-bottom:64px;
+}
+.toc-label {
+  font-size:10px; font-weight:400; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--dim3); margin-bottom:18px;
+}
+.toc-list { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.toc-list li a {
+  display:flex; align-items:center; gap:12px;
+  font-size:13.5px; font-weight:300; color:var(--dim4);
+  transition:color .25s, padding-left .3s var(--ease-out);
+}
+.toc-list li a:hover { color:var(--white); padding-left:6px; }
+.toc-num {
+  font-family:var(--serif); font-size:11px; font-weight:300;
+  color:var(--dim2); letter-spacing:.1em; width:24px; flex-shrink:0;
+}
+
+/* ════════════════════════════════════════════
+   BODY
+════════════════════════════════════════════ */
+.page-body { max-width:760px; margin:0 auto; padding:72px 5% 100px; }
+
+.lead {
+  font-size:16px; font-weight:300; color:var(--dim4);
+  line-height:1.85; margin-bottom:64px;
+  padding-bottom:64px; border-bottom:.5px solid rgba(255,255,255,.06);
+}
+.lead strong { color:var(--white); font-weight:400; }
+
+.doc-section { margin-bottom:56px; scroll-margin-top:72px; }
+.doc-section:last-child { margin-bottom:0; }
+
+.doc-h {
+  font-family:var(--serif); font-weight:300;
+  font-size:clamp(20px,2.5vw,28px);
+  letter-spacing:-.02em; line-height:1.1; color:var(--white);
+  margin-bottom:20px; padding-bottom:14px;
+  border-bottom:.5px solid rgba(255,255,255,.06);
+  display:flex; align-items:baseline; gap:14px;
+}
+.doc-h-num {
+  font-size:11px; font-weight:300; font-family:var(--serif);
+  color:var(--dim3); letter-spacing:.12em; flex-shrink:0;
+}
+
+.doc-p {
+  font-size:14.5px; font-weight:300; color:var(--dim4);
+  line-height:1.82; margin-bottom:16px;
+}
+.doc-p:last-child { margin-bottom:0; }
+.doc-p strong { color:var(--white); font-weight:400; }
+
+.doc-list {
+  list-style:none; display:flex; flex-direction:column;
+  gap:12px; margin:16px 0;
+}
+.doc-list li {
+  display:flex; align-items:flex-start; gap:14px;
+  font-size:14px; font-weight:300; color:var(--dim4); line-height:1.72;
+}
+.doc-list li::before {
+  content:''; display:block; flex-shrink:0;
+  width:4px; height:4px; border-radius:50%;
+  background:var(--blue); margin-top:8px;
+}
+.doc-list li strong { color:var(--white); font-weight:400; }
+
+/* Permission tags */
+.perm-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:10px; margin:20px 0;
+}
+.perm-card {
+  background:rgba(255,255,255,.025);
+  border:.5px solid rgba(255,255,255,.07);
+  border-radius:12px; padding:18px 20px;
+  transition:border-color .3s, background .3s;
+}
+.perm-card:hover { border-color:rgba(0,102,204,.3); background:rgba(0,102,204,.04); }
+.perm-name {
+  font-size:11px; font-weight:400; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--blue); margin-bottom:8px;
+}
+.perm-desc { font-size:13px; font-weight:300; color:var(--dim4); line-height:1.6; }
+
+/* Inline email link */
+.inline-link {
+  color:var(--blue); border-bottom:.5px solid rgba(0,102,204,.35);
+  transition:color .25s, border-color .25s;
+}
+.inline-link:hover { color:var(--blue-h); border-color:rgba(0,113,227,.6); }
+
+/* Note box */
+.note-box {
+  background:rgba(255,255,255,.025);
+  border:.5px solid rgba(255,255,255,.07);
+  border-left:2px solid var(--blue);
+  border-radius:0 12px 12px 0;
+  padding:16px 22px; margin:16px 0;
+}
+.note-box p { font-size:13.5px; font-weight:300; color:var(--dim3); line-height:1.7; }
+.note-box strong { color:var(--white); font-weight:400; }
+
+/* Contact block */
+.contact-block {
+  background:rgba(255,255,255,.025);
+  border:.5px solid rgba(255,255,255,.07);
+  border-radius:16px; padding:32px; margin-top:20px;
+}
+.contact-row {
+  display:flex; align-items:flex-start;
+  padding:14px 0; border-bottom:.5px solid rgba(255,255,255,.05);
+}
+.contact-row:last-child { border-bottom:none; padding-bottom:0; }
+.contact-row:first-child { padding-top:0; }
+.contact-lbl {
+  width:80px; flex-shrink:0;
+  font-size:10px; font-weight:400; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--dim3); padding-top:2px;
+}
+.contact-val { font-size:14px; font-weight:300; color:var(--dim4); line-height:1.6; }
+.contact-val a { color:var(--white); opacity:.7; transition:opacity .2s; }
+.contact-val a:hover { opacity:1; }
+
+/* ════════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════════ */
+footer { background:var(--black); border-top:.5px solid rgba(255,255,255,.055); padding:44px 5% 32px; }
+.ft-wrap { max-width:1160px; margin:0 auto; }
+.ft-top { display:flex; align-items:center; justify-content:space-between; padding-bottom:28px; margin-bottom:22px; border-bottom:.5px solid rgba(255,255,255,.04); }
+.ft-logo { font-family:var(--serif); font-size:15px; font-weight:400; letter-spacing:.02em; color:var(--white); }
+.ft-nav  { display:flex; gap:28px; list-style:none; }
+.ft-nav a { font-size:12px; font-weight:300; color:var(--dim2); transition:color .2s; }
+.ft-nav a:hover { color:var(--white); }
+.ft-bottom { display:flex; align-items:center; justify-content:space-between; }
+.ft-copy,.ft-loc { font-size:11px; font-weight:300; color:var(--dim2); letter-spacing:.01em; }
+
+/* ════════════════════════════════════════════
+   SCROLL REVEAL
+════════════════════════════════════════════ */
+.sr { opacity:0; transform:translateY(32px); transition:opacity .8s var(--ease-out), transform .8s var(--ease-out); }
+.sr.up { opacity:1; transform:translateY(0); }
+.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}
+.d4{transition-delay:.28s}.d5{transition-delay:.35s}.d6{transition-delay:.42s}
+.d7{transition-delay:.49s}.d8{transition-delay:.56s}.d9{transition-delay:.63s}
+.d10{transition-delay:.70s}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════════ */
+@media(max-width:768px){
+  #nav { padding:0 20px; }
+  .n-links { display:none; }
+  button.n-hamburger { display:flex; }
+  .page-hero { padding:120px 5% 60px; }
+  .page-body { padding:52px 5% 80px; }
+  .perm-grid { grid-template-columns:1fr; }
+  .toc { padding:22px 24px; }
+  .ft-top { flex-direction:column; gap:18px; text-align:center; }
+  .ft-nav { flex-wrap:wrap; justify-content:center; gap:16px; }
+  .ft-bottom { flex-direction:column; gap:8px; text-align:center; }
+}
+@media(max-width:480px){
+  .page-title { font-size:28px; }
+  .doc-h { font-size:20px; }
+  .n-cta { display:none; }
+  .contact-lbl { width:64px; }
+  .perm-grid { grid-template-columns:1fr 1fr; }
+}
+@media(max-width:360px){
+  .perm-grid { grid-template-columns:1fr; }
+}
+</style>
 </head>
+<body>
 
-<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark antialiased">
+<!-- ━━━━━━━━━━━━━━━━ NAV ━━━━━━━━━━━━━━━━ -->
+<nav id="nav">
+  <a href="/" class="n-word">Neovant Advance Solutions</a>
+  <ul class="n-links">
+    <li><a href="/#services" class="n-link">Services</a></li>
+    <li><a href="/#process"  class="n-link">Process</a></li>
+    <li><a href="/#numbers"  class="n-link">About</a></li>
+    <li><a href="/#contact"  class="n-link">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <a href="/#contact" class="n-cta">Get a Quote</a>
+    <button class="n-hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-<header class="sticky top-0 z-50 px-6 py-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur border-b border-subtle-light dark:border-subtle-dark">
-  <a href="/" class="text-primary font-bold text-lg">Neovant Advanced Solutions</a>
-</header>
+<!-- Mobile drawer -->
+<div class="n-drawer" id="n-drawer" aria-hidden="true">
+  <nav class="n-drawer-links">
+    <a href="/#services" class="n-drawer-link">Services</a>
+    <a href="/#process"  class="n-drawer-link">Process</a>
+    <a href="/#numbers"  class="n-drawer-link">About</a>
+    <a href="/#contact"  class="n-drawer-link">Contact</a>
+  </nav>
+  <a href="/#contact" class="n-drawer-cta">Get a Quote ›</a>
+</div>
 
-<main class="max-w-4xl mx-auto px-6 py-16">
+<!-- ━━━━━━━━━━━━━━━━ PAGE HERO ━━━━━━━━━━━━━━━━ -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-breadcrumb">
+      <a href="/">Neovant</a>
+      <span class="page-breadcrumb-sep">›</span>
+      <span>Privacy Policy</span>
+    </div>
+    <p class="page-tag">Legal &nbsp;·&nbsp; Data Privacy</p>
+    <h1 class="page-title">Privacy <em>Policy</em></h1>
+    <p class="page-meta">R&amp;B Ganderbal Application &nbsp;·&nbsp; Last updated: 24 December 2025</p>
+  </div>
+</section>
 
-  <header class="mb-12">
-    <h1 class="text-3xl md:text-4xl font-bold mb-2">Privacy Policy – R&B Ganderbal</h1>
-    <p class="text-sm text-text-muted-light dark:text-text-muted-dark">
-      Last updated: 24 December 2025
-    </p>
-  </header>
+<!-- ━━━━━━━━━━━━━━━━ BODY ━━━━━━━━━━━━━━━━ -->
+<div class="page-body">
 
-  <section class="space-y-5 leading-relaxed">
-    <p>
-      This Privacy Policy applies to the Android application
-      <strong>“R&B Ganderbal”</strong> (“the App”), published on Google Play Store
-      and developed and maintained by
-      <strong>Neovant Advance Solutions Private Limited</strong>
-      (“Company”, “we”, “our”, or “us”).
-    </p>
+  <!-- Lead -->
+  <p class="lead sr">
+    This Privacy Policy applies to the Android application
+    <strong>R&amp;B Ganderbal</strong>, published on Google Play Store
+    and developed and maintained by
+    <strong>Neovant Advance Solutions Private Limited</strong>
+    ("Company", "we", "our", or "us"). It explains how information is
+    collected, used, stored, protected, and deleted in relation to this application.
+  </p>
 
-    <p>
-      This policy explains how information is collected, used, stored, protected,
-      and deleted in relation to the <strong>R&B Ganderbal</strong> mobile application.
-    </p>
-  </section>
+  <!-- Table of Contents -->
+  <div class="toc sr">
+    <p class="toc-label">Contents</p>
+    <ol class="toc-list">
+      <li><a href="#s1"><span class="toc-num">01</span>Purpose of the Application</a></li>
+      <li><a href="#s2"><span class="toc-num">02</span>Information Collected</a></li>
+      <li><a href="#s3"><span class="toc-num">03</span>Use of Information</a></li>
+      <li><a href="#s4"><span class="toc-num">04</span>Data Sharing and Disclosure</a></li>
+      <li><a href="#s5"><span class="toc-num">05</span>Data Storage and Security</a></li>
+      <li><a href="#s6"><span class="toc-num">06</span>Application Permissions</a></li>
+      <li><a href="#s7"><span class="toc-num">07</span>Children's Privacy</a></li>
+      <li><a href="#s8"><span class="toc-num">08</span>Policy Updates</a></li>
+      <li><a href="#s9"><span class="toc-num">09</span>Account Deletion</a></li>
+      <li><a href="#s10"><span class="toc-num">10</span>Contact Information</a></li>
+    </ol>
+  </div>
 
-  <section class="mt-12">
-    <h2 class="text-xl font-semibold mb-3">1. Purpose of the Application</h2>
-    <p>
-      The R&B Ganderbal application is developed to support official Government
+  <!-- 01 Purpose -->
+  <div class="doc-section sr d1" id="s1">
+    <h2 class="doc-h"><span class="doc-h-num">01</span>Purpose of the Application</h2>
+    <p class="doc-p">
+      The R&amp;B Ganderbal application is developed to support official Government
       operations, including project monitoring, progress reporting,
       administrative coordination, and verification of field-level activities.
     </p>
-  </section>
+  </div>
 
-  <section class="mt-12">
-    <h2 class="text-xl font-semibold mb-3">2. Information Collected</h2>
-    <ul class="list-disc pl-6 space-y-2 text-text-muted-light dark:text-text-muted-dark">
+  <!-- 02 Information Collected -->
+  <div class="doc-section sr d2" id="s2">
+    <h2 class="doc-h"><span class="doc-h-num">02</span>Information Collected</h2>
+    <p class="doc-p">The following categories of information may be collected during use of the application:</p>
+    <ul class="doc-list">
       <li>Full name and official contact details</li>
       <li>Designation, role, and access permissions</li>
       <li>Authentication credentials and session identifiers</li>
-      <li>Location data (only during active use and with consent)</li>
+      <li>Location data (only during active use and with explicit consent)</li>
       <li>Images or documents uploaded for official purposes</li>
       <li>Device information and diagnostic logs</li>
     </ul>
-  </section>
+  </div>
 
-  <section class="mt-12">
-    <h2 class="text-xl font-semibold mb-3">3. Use of Information</h2>
-    <p>
+  <!-- 03 Use of Information -->
+  <div class="doc-section sr d3" id="s3">
+    <h2 class="doc-h"><span class="doc-h-num">03</span>Use of Information</h2>
+    <p class="doc-p">
       Information is used strictly for legitimate Government and operational
-      purposes, including authentication, authorization, activity verification,
-      system auditing, and service improvement.
+      purposes, including authentication, authorisation, activity verification,
+      system auditing, and service improvement. Data is never used for
+      commercial profiling or advertising.
     </p>
-  </section>
+  </div>
 
-  <section class="mt-12">
-    <h2 class="text-xl font-semibold mb-3">4. Data Sharing and Disclosure</h2>
-    <p>
-      We do not sell, rent, or commercially exploit user data. Access is limited
-      to authorized Government officials and designated technical personnel only.
+  <!-- 04 Data Sharing -->
+  <div class="doc-section sr d4" id="s4">
+    <h2 class="doc-h"><span class="doc-h-num">04</span>Data Sharing and Disclosure</h2>
+    <p class="doc-p">
+      We do not sell, rent, or commercially exploit user data. Access is strictly
+      limited to authorised Government officials and designated technical personnel only.
+      Data is not shared with third parties except where required by law or official directive.
     </p>
-  </section>
+  </div>
 
-  <section class="mt-12">
-    <h2 class="text-xl font-semibold mb-3">5. Data Storage and Security</h2>
-    <p>
-      Appropriate technical and organizational safeguards are implemented,
-      including encrypted transmission, secure servers, and role-based access
-      control.
+  <!-- 05 Storage & Security -->
+  <div class="doc-section sr d5" id="s5">
+    <h2 class="doc-h"><span class="doc-h-num">05</span>Data Storage and Security</h2>
+    <p class="doc-p">
+      Appropriate technical and organisational safeguards are implemented to
+      protect your data against unauthorised access, disclosure, or loss.
+      These measures include:
     </p>
-  </section>
-
-  <section class="mt-12">
-    <h2 class="text-xl font-semibold mb-3">6. Application Permissions</h2>
-    <ul class="list-disc pl-6 space-y-2 text-text-muted-light dark:text-text-muted-dark">
-      <li><strong>Location:</strong> Field activity verification</li>
-      <li><strong>Camera:</strong> Capturing official images</li>
-      <li><strong>Storage:</strong> Uploading official documents</li>
+    <ul class="doc-list">
+      <li>Encrypted data transmission over secure connections</li>
+      <li>Secure, access-controlled server infrastructure</li>
+      <li>Role-based access controls limiting data visibility</li>
+      <li>Regular security reviews and audit logging</li>
     </ul>
-    <p class="mt-2 text-sm text-text-muted-light dark:text-text-muted-dark">
-      Permissions are requested only when necessary and can be revoked via device settings.
-    </p>
-  </section>
+  </div>
 
-  <section class="mt-12">
-    <h2 class="text-xl font-semibold mb-3">7. Children’s Privacy</h2>
-    <p>
-      The application is not intended for individuals under the age of 13.
-      We do not knowingly collect personal information from children.
-    </p>
-  </section>
+  <!-- 06 Permissions -->
+  <div class="doc-section sr d6" id="s6">
+    <h2 class="doc-h"><span class="doc-h-num">06</span>Application Permissions</h2>
+    <p class="doc-p">The application requests the following device permissions, each used solely for the stated purpose:</p>
+    <div class="perm-grid">
+      <div class="perm-card">
+        <div class="perm-name">Location</div>
+        <div class="perm-desc">Field activity verification and geotagging of official site visits</div>
+      </div>
+      <div class="perm-card">
+        <div class="perm-name">Camera</div>
+        <div class="perm-desc">Capturing official site photographs and documentation</div>
+      </div>
+      <div class="perm-card">
+        <div class="perm-name">Storage</div>
+        <div class="perm-desc">Uploading and accessing official documents and media</div>
+      </div>
+    </div>
+    <div class="note-box">
+      <p>Permissions are requested only when necessary and can be revoked at any time via your device settings without affecting non-dependent features.</p>
+    </div>
+  </div>
 
-  <section class="mt-12">
-    <h2 class="text-xl font-semibold mb-3">8. Policy Updates</h2>
-    <p>
-      This Privacy Policy may be updated periodically. Changes will be published
-      on this page with an updated effective date.
+  <!-- 07 Children -->
+  <div class="doc-section sr d7" id="s7">
+    <h2 class="doc-h"><span class="doc-h-num">07</span>Children's Privacy</h2>
+    <p class="doc-p">
+      This application is intended exclusively for authorised Government personnel
+      and is not designed for individuals under the age of 13. We do not knowingly
+      collect personal information from children. If such collection is discovered,
+      it will be deleted promptly.
     </p>
-  </section>
+  </div>
 
-  <section class="mt-12">
-    <h2 class="text-xl font-semibold mb-3">9. Account Deletion</h2>
-    <p>
-      Users of the <strong>R&B Ganderbal</strong> application may request deletion
-      of their account and associated personal data.
+  <!-- 08 Policy Updates -->
+  <div class="doc-section sr d8" id="s8">
+    <h2 class="doc-h"><span class="doc-h-num">08</span>Policy Updates</h2>
+    <p class="doc-p">
+      This Privacy Policy may be updated periodically to reflect changes in
+      operational practice, legal requirements, or application functionality.
+      Updates will be published on this page with a revised effective date.
+      Continued use of the application following any update constitutes
+      acceptance of the revised policy.
     </p>
-    <p class="mt-2">
-      To request account deletion, email:
-      <a href="mailto:info@neovant.in" class="text-primary font-medium">
-        info@neovant.in
-      </a>
-      <br/>
-      Subject: <strong>Account Deletion – R&B Ganderbal</strong>
+  </div>
+
+  <!-- 09 Account Deletion -->
+  <div class="doc-section sr d9" id="s9">
+    <h2 class="doc-h"><span class="doc-h-num">09</span>Account Deletion</h2>
+    <p class="doc-p">
+      Users of the <strong>R&amp;B Ganderbal</strong> application may request
+      permanent deletion of their account and associated personal data at any time.
     </p>
-  </section>
-
-  <section class="mt-12">
-    <h2 class="text-xl font-semibold mb-3">10. Contact Information</h2>
-    <p><strong>Neovant Advance Solutions Private Limited</strong></p>
-    <p>Email: info@neovant.in</p>
-    <p>Phone: (+91)-8082821535</p>
-    <p class="text-sm mt-2">
-      CIN: U62099JK2025PTC018396<br/>
-      UDYAM: UDYAM-JK-03-0047264
+    <p class="doc-p">
+      To submit a deletion request, email us at
+      <a class="inline-link" id="inline-email" href="#">info@neovant.in</a>
+      with the subject line: <strong>Account Deletion – R&amp;B Ganderbal</strong>
     </p>
-  </section>
+    <div class="note-box">
+      <p>
+        For full details on what data is deleted, retention obligations, and
+        processing timeframes, see our
+        <a class="inline-link" href="/data-deletion.html">Account Deletion page</a>.
+      </p>
+    </div>
+  </div>
 
-</main>
+  <!-- 10 Contact -->
+  <div class="doc-section sr d10" id="s10">
+    <h2 class="doc-h"><span class="doc-h-num">10</span>Contact Information</h2>
+    <p class="doc-p">For any questions or concerns regarding this Privacy Policy, please contact us:</p>
+    <div class="contact-block">
+      <div class="contact-row">
+        <span class="contact-lbl">Company</span>
+        <span class="contact-val">Neovant Advance Solutions Private Limited</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-lbl">Email</span>
+        <span class="contact-val"><a id="contact-email" href="#">info@neovant.in</a></span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-lbl">Phone</span>
+        <span class="contact-val"><a href="tel:+918082821535">+91 80828 21535</a></span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-lbl">Address</span>
+        <span class="contact-val">Nigeen Bagh Krankshivan Colony,<br>Sopore, Baramulla, J&amp;K — 193201</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-lbl">Web</span>
+        <span class="contact-val"><a href="https://www.neovant.in" target="_blank">www.neovant.in</a></span>
+      </div>
+    </div>
+  </div>
 
-<footer class="text-center py-10 text-sm text-text-muted-light dark:text-text-muted-dark">
-  © 2025 Neovant Advance Solutions Private Limited. All Rights Reserved.
+</div>
+
+<!-- ━━━━━━━━━━━━━━━━ FOOTER ━━━━━━━━━━━━━━━━ -->
+<footer>
+  <div class="ft-wrap">
+    <div class="ft-top">
+      <span class="ft-logo">Neovant Advance Solutions</span>
+      <ul class="ft-nav">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#process">Process</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        <li><a href="https://www.neovant.in" target="_blank">neovant.in</a></li>
+      </ul>
+    </div>
+    <div class="ft-bottom">
+      <span class="ft-copy">&copy; 2025 Neovant Advance Solutions Pvt Ltd. All rights reserved.</span>
+      <span class="ft-loc">Sopore, Baramulla, Jammu &amp; Kashmir, India</span>
+    </div>
+  </div>
 </footer>
 
+<script>
+/* ─ EMAIL (assembled to avoid proxy obfuscation) ── */
+(function() {
+  const h = 'mailto:' + 'info' + '@' + 'neovant.in';
+  ['inline-email', 'contact-email'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.setAttribute('href', h);
+  });
+})();
+
+/* ─ HAMBURGER ─────────────────────── */
+const hamburger = document.getElementById('hamburger');
+const drawer    = document.getElementById('n-drawer');
+let open = false;
+
+function toggle(force) {
+  open = force !== undefined ? force : !open;
+  hamburger.classList.toggle('open', open);
+  drawer.classList.toggle('open', open);
+  hamburger.setAttribute('aria-expanded', open);
+  drawer.setAttribute('aria-hidden', !open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+
+hamburger.addEventListener('click', () => toggle());
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggle(false)));
+document.addEventListener('click', e => {
+  if (open && !drawer.contains(e.target) && !hamburger.contains(e.target)) toggle(false);
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && open) toggle(false);
+});
+
+/* ─ SCROLL REVEAL ─────────────────── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('up'); io.unobserve(e.target); }
+  });
+}, { threshold: .1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.sr').forEach(el => io.observe(el));
+
+/* ─ PAGE LOAD ─────────────────────── */
+window.addEventListener('load', () => {
+  document.documentElement.style.opacity = '1';
+});
+</script>
 </body>
 </html>
