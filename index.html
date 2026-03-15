@@ -849,6 +849,758 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
   .ct-wrap   { gap:48px; }
   .n-cta     { display:none; }
 }
+
+/* ════════════════════════════════════════════
+   CASE STUDY — PMU (R&B)
+════════════════════════════════════════════ */
+#case-study {
+  background: var(--black);
+  padding: 120px 5%;
+  border-top: .5px solid rgba(255,255,255,.04);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Subtle blue glow behind the card */
+#case-study::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%; height: 60%;
+  background: radial-gradient(ellipse at center, rgba(0,102,204,.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cs-wrap {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Left — text */
+.cs-left .sec-kicker { color: var(--dim3); margin-bottom: 20px; }
+.cs-title {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(34px, 4.5vw, 58px);
+  letter-spacing: -.035em;
+  line-height: 1.0;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+.cs-title em { font-style: italic; color: rgba(255,255,255,.22); }
+
+.cs-body {
+  font-size: 14.5px;
+  font-weight: 300;
+  color: var(--dim3);
+  line-height: 1.82;
+  max-width: 440px;
+  margin-bottom: 40px;
+}
+
+.cs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+.cs-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 980px;
+  background: rgba(255,255,255,.04);
+  border: .5px solid rgba(255,255,255,.1);
+  font-size: 11.5px;
+  font-weight: 300;
+  color: var(--dim4);
+  letter-spacing: .02em;
+}
+.cs-tag-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--blue);
+  flex-shrink: 0;
+}
+
+.cs-store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 28px;
+  border-radius: 980px;
+  background: rgba(255,255,255,.05);
+  border: .5px solid rgba(255,255,255,.15);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 400;
+  transition: all .3s;
+}
+.cs-store-btn:hover {
+  background: rgba(255,255,255,.09);
+  border-color: rgba(255,255,255,.35);
+  transform: translateY(-2px);
+}
+
+/* Right — stat cards grid */
+.cs-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.cs-card {
+  border-radius: 18px;
+  padding: 32px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .4s var(--ease-out);
+}
+.cs-card:hover { transform: translateY(-4px); }
+
+.cs-card-dark  { background: var(--ink3); border: .5px solid rgba(255,255,255,.06); }
+.cs-card-blue  { background: var(--blue); }
+.cs-card-light { background: rgba(255,255,255,.04); border: .5px solid rgba(255,255,255,.07); }
+
+/* Span first card full width */
+.cs-card-wide { grid-column: span 2; }
+
+.cs-card-val {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(38px, 4vw, 58px);
+  letter-spacing: -.045em;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.cs-card-dark  .cs-card-val,
+.cs-card-light .cs-card-val { color: var(--white); }
+.cs-card-blue  .cs-card-val { color: #fff; }
+
+.cs-card-val sup { font-size: .38em; vertical-align: super; letter-spacing: 0; }
+
+.cs-card-label {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.cs-card-dark  .cs-card-label,
+.cs-card-light .cs-card-label { color: var(--dim3); }
+.cs-card-blue  .cs-card-label { color: rgba(255,255,255,.6); }
+
+.cs-card-desc {
+  font-size: 12.5px;
+  font-weight: 300;
+  line-height: 1.65;
+}
+.cs-card-dark  .cs-card-desc,
+.cs-card-light .cs-card-desc { color: var(--dim3); }
+.cs-card-blue  .cs-card-desc { color: rgba(255,255,255,.7); }
+
+/* Decorative grid lines on the blue card */
+.cs-card-blue::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+/* Trust banner below the grid */
+.cs-trust {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 22px;
+  border-radius: 14px;
+  background: rgba(0,102,204,.08);
+  border: .5px solid rgba(0,102,204,.2);
+  margin-top: 2px;
+}
+.cs-trust-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--blue);
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(0,102,204,.25);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(0,102,204,.25); }
+  50%       { box-shadow: 0 0 0 6px rgba(0,102,204,.1);  }
+}
+.cs-trust-text {
+  font-size: 12.5px;
+  font-weight: 300;
+  color: var(--dim4);
+  line-height: 1.55;
+}
+.cs-trust-text strong {
+  font-weight: 400;
+  color: rgba(255,255,255,.75);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .cs-wrap { grid-template-columns: 1fr; gap: 60px; }
+  .cs-body { max-width: 100%; }
+}
+@media (max-width: 768px) {
+  #case-study { padding: 80px 5%; }
+  .cs-right   { grid-template-columns: 1fr 1fr; }
+  .cs-card    { padding: 24px 20px; }
+  .cs-card-val { font-size: clamp(32px, 9vw, 48px); }
+}
+@media (max-width: 480px) {
+  .cs-right { grid-template-columns: 1fr; }
+  .cs-card-wide { grid-column: span 1; }
+  .cs-trust { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+
+/* ════════════════════════════════════════════
+   CASE STUDY 2 — MANDI LEDGER
+════════════════════════════════════════════ */
+#mandi-ledger {
+  background: var(--black);
+  padding: 120px 5%;
+  border-top: .5px solid rgba(255,255,255,.04);
+  overflow: hidden;
+  position: relative;
+}
+#mandi-ledger::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 70%; height: 60%;
+  background: radial-gradient(ellipse at center, rgba(0,102,204,.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.ml-wrap {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Cards on left, text on right — mirrored from PMU */
+.ml-cards-col { order: -1; }
+
+/* In-development badge */
+.ml-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 980px;
+  background: rgba(0,102,204,.08);
+  border: .5px solid rgba(0,102,204,.22);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #60a5fa;
+  margin-bottom: 24px;
+}
+.ml-badge-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #60a5fa;
+  animation: mlpulse 2.2s ease-in-out infinite;
+}
+@keyframes mlpulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:.4; transform:scale(.75); }
+}
+
+.ml-title {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(34px,4.5vw,58px);
+  letter-spacing: -.035em;
+  line-height: 1.0;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+.ml-title em { font-style: italic; color: rgba(255,255,255,.22); }
+
+.ml-body {
+  font-size: 14.5px;
+  font-weight: 300;
+  color: var(--dim3);
+  line-height: 1.82;
+  max-width: 440px;
+  margin-bottom: 36px;
+}
+
+.ml-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+.ml-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 980px;
+  background: rgba(255,255,255,.04);
+  border: .5px solid rgba(255,255,255,.08);
+  font-size: 11.5px;
+  font-weight: 300;
+  color: var(--dim4);
+  letter-spacing: .02em;
+}
+.ml-tag-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--blue);
+  flex-shrink: 0;
+  opacity: .8;
+}
+
+/* Stat cards grid */
+.ml-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.ml-card {
+  border-radius: 18px;
+  padding: 30px 26px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .4s var(--ease-out);
+}
+.ml-card:hover { transform: translateY(-4px); }
+
+.ml-card-blue  { background: var(--blue); }
+.ml-card-dark  { background: var(--ink3); border: .5px solid rgba(255,255,255,.06); }
+.ml-card-dim   { background: rgba(255,255,255,.03); border: .5px solid rgba(255,255,255,.06); }
+.ml-card-wide  { grid-column: span 2; }
+
+/* Grid texture on blue card — same as PMU */
+.ml-card-blue::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.ml-card-val {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(32px,3.5vw,52px);
+  letter-spacing: -.04em;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.ml-card-blue .ml-card-val { color: #fff; }
+.ml-card-dark .ml-card-val,
+.ml-card-dim  .ml-card-val { color: var(--white); }
+.ml-card-val sup { font-size: .38em; vertical-align: super; letter-spacing: 0; }
+
+.ml-card-label {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.ml-card-blue .ml-card-label { color: rgba(255,255,255,.6); }
+.ml-card-dark .ml-card-label,
+.ml-card-dim  .ml-card-label { color: var(--dim3); }
+
+.ml-card-desc {
+  font-size: 12.5px;
+  font-weight: 300;
+  line-height: 1.65;
+}
+.ml-card-blue .ml-card-desc { color: rgba(255,255,255,.7); }
+.ml-card-dark .ml-card-desc,
+.ml-card-dim  .ml-card-desc { color: var(--dim3); }
+
+/* Mini sparkline bars on blue card */
+.ml-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 36px;
+  margin-top: 16px;
+  position: relative;
+  z-index: 1;
+}
+.ml-bar {
+  flex: 1;
+  border-radius: 3px 3px 0 0;
+  background: rgba(255,255,255,.22);
+  transition: background .3s;
+}
+.ml-card-blue:hover .ml-bar { background: rgba(255,255,255,.32); }
+
+/* Status banner */
+.ml-status {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: rgba(0,102,204,.07);
+  border: .5px solid rgba(0,102,204,.18);
+}
+.ml-status-icon {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  background: rgba(0,102,204,.12);
+  border: .5px solid rgba(0,102,204,.25);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.ml-status-text {
+  font-size: 12.5px;
+  font-weight: 300;
+  color: var(--dim3);
+  line-height: 1.55;
+}
+.ml-status-text strong { font-weight: 400; color: #93c5fd; }
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .ml-wrap      { grid-template-columns: 1fr; gap: 60px; }
+  .ml-cards-col { order: 0; }
+  .ml-body      { max-width: 100%; }
+}
+@media (max-width: 768px) {
+  #mandi-ledger { padding: 80px 5%; }
+  .ml-cards     { grid-template-columns: 1fr 1fr; }
+  .ml-card      { padding: 22px 18px; }
+}
+@media (max-width: 480px) {
+  .ml-cards     { grid-template-columns: 1fr; }
+  .ml-card-wide { grid-column: span 1; }
+  .ml-status    { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+
+/* ════════════════════════════════════════════
+   CASE STUDY 3 — BANGALORE TRAFFIC AI
+════════════════════════════════════════════ */
+#traffic-ai {
+  background: var(--ink2);
+  padding: 120px 5%;
+  border-top: .5px solid rgba(255,255,255,.04);
+  overflow: hidden;
+  position: relative;
+}
+#traffic-ai::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 70%; height: 60%;
+  background: radial-gradient(ellipse at center, rgba(0,102,204,.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.ta-wrap {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Research badge */
+.ta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 980px;
+  background: rgba(255,255,255,.05);
+  border: .5px solid rgba(255,255,255,.14);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--dim4);
+  margin-bottom: 24px;
+}
+.ta-badge-icon {
+  width: 6px; height: 6px;
+  border-radius: 1px;
+  background: var(--dim3);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+.ta-title {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(34px,4.5vw,58px);
+  letter-spacing: -.035em;
+  line-height: 1.0;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+.ta-title em { font-style: italic; color: rgba(255,255,255,.22); }
+
+.ta-body {
+  font-size: 14.5px;
+  font-weight: 300;
+  color: var(--dim3);
+  line-height: 1.82;
+  max-width: 440px;
+  margin-bottom: 36px;
+}
+
+.ta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+.ta-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 980px;
+  background: rgba(255,255,255,.04);
+  border: .5px solid rgba(255,255,255,.08);
+  font-size: 11.5px;
+  font-weight: 300;
+  color: var(--dim4);
+  letter-spacing: .02em;
+}
+.ta-tag-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--blue);
+  flex-shrink: 0;
+  opacity: .75;
+}
+
+/* Institution credit row */
+.ta-inst {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.03);
+  border: .5px solid rgba(255,255,255,.07);
+  max-width: 420px;
+}
+.ta-inst-logo {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.06);
+  border: .5px solid rgba(255,255,255,.1);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--white);
+}
+.ta-inst-text { font-size: 12.5px; font-weight: 300; color: var(--dim3); line-height: 1.5; }
+.ta-inst-text strong { font-weight: 400; color: var(--dim4); }
+
+/* Right stat cards */
+.ta-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.ta-card {
+  border-radius: 18px;
+  padding: 30px 26px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .4s var(--ease-out);
+}
+.ta-card:hover { transform: translateY(-4px); }
+
+.ta-card-blue  { background: var(--blue); }
+.ta-card-dark  { background: var(--ink3); border: .5px solid rgba(255,255,255,.06); }
+.ta-card-dim   { background: rgba(255,255,255,.03); border: .5px solid rgba(255,255,255,.06); }
+.ta-card-wide  { grid-column: span 2; }
+
+.ta-card-blue::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.ta-card-val {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(30px,3.2vw,48px);
+  letter-spacing: -.04em;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.ta-card-blue .ta-card-val { color: #fff; }
+.ta-card-dark .ta-card-val,
+.ta-card-dim  .ta-card-val { color: var(--white); }
+.ta-card-val sup { font-size: .38em; vertical-align: super; letter-spacing: 0; }
+
+.ta-card-label {
+  font-size: 10px; font-weight: 400;
+  letter-spacing: .22em; text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.ta-card-blue .ta-card-label { color: rgba(255,255,255,.6); }
+.ta-card-dark .ta-card-label,
+.ta-card-dim  .ta-card-label { color: var(--dim3); }
+
+.ta-card-desc {
+  font-size: 12.5px; font-weight: 300; line-height: 1.65;
+}
+.ta-card-blue .ta-card-desc { color: rgba(255,255,255,.7); }
+.ta-card-dark .ta-card-desc,
+.ta-card-dim  .ta-card-desc { color: var(--dim3); }
+
+/* Feature list inside dark card */
+.ta-feat-list {
+  list-style: none;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ta-feat-list li {
+  font-size: 11.5px;
+  font-weight: 300;
+  color: var(--dim3);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  line-height: 1.4;
+}
+.ta-feat-list li::before {
+  content: '';
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--blue);
+  flex-shrink: 0;
+  opacity: .7;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .ta-wrap { grid-template-columns: 1fr; gap: 60px; }
+  .ta-body { max-width: 100%; }
+}
+@media (max-width: 768px) {
+  #traffic-ai { padding: 80px 5%; }
+  .ta-cards   { grid-template-columns: 1fr 1fr; }
+  .ta-card    { padding: 22px 18px; }
+}
+@media (max-width: 480px) {
+  .ta-cards    { grid-template-columns: 1fr; }
+  .ta-card-wide { grid-column: span 1; }
+}
+
+/* ════════════════════════════════════════════
+   HERO MOBILE OVERFLOW FIX  ← PATCH
+════════════════════════════════════════════ */
+
+/*
+  Root cause: The <canvas id="stars-cv"> has no position/size CSS,
+  so the JS canvas resize sets its pixel dimensions but the element
+  itself is in normal flow and can be wider than the viewport on
+  narrow screens, causing horizontal scroll / overflow on #hero.
+
+  Secondary cause: CSS perspective transforms on .h-floor / .h-ceil
+  can produce paint overflow that escapes the #hero clipping context
+  if the element doesn't have an explicit overflow:hidden enforced
+  at the right cascade layer.
+*/
+
+/* 1. Anchor the canvas absolutely so it never participates in layout */
+#stars-cv {
+  position: absolute;
+  inset: 0;                   /* top/right/bottom/left: 0 */
+  width: 100% !important;     /* override any inline style from JS */
+  height: 100% !important;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 2. Perspective decorators: prevent any transform overflow escaping */
+.h-floor,
+.h-ceil {
+  overflow: hidden;
+}
+
+/* 3. Belt-and-suspenders mobile rules */
+@media (max-width: 768px) {
+
+  /* Force hero to clip everything inside it */
+  #hero {
+    overflow: hidden !important;   /* belt */
+    /* 100svh already set by existing rule — left intact */
+  }
+
+  /* Prevent .h-inner from pushing wider than viewport */
+  .h-inner {
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+  /* Title: allow wrapping rather than overflowing */
+  .h-title {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  /* Buttons: never wider than viewport */
+  .btn-solid,
+  .btn-ghost {
+    max-width: min(280px, 85vw);
+    box-sizing: border-box;
+  }
+}
+
+/* 4. Extra-small screens */
+@media (max-width: 390px) {
+  .h-inner { padding: 0 4%; }
+}
 </style>
 </head>
 <body>
@@ -862,6 +1614,7 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
   <ul class="n-links">
     <li><a href="#services" class="n-link">Services</a></li>
     <li><a href="#process"  class="n-link">Process</a></li>
+    <li><a href="#case-study" class="n-link">Work</a></li>
     <li><a href="#numbers"  class="n-link">About</a></li>
     <li><a href="#contact"  class="n-link">Contact</a></li>
   </ul>
@@ -878,6 +1631,7 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
   <nav class="n-drawer-links">
     <a href="#services" class="n-drawer-link">Services</a>
     <a href="#process"  class="n-drawer-link">Process</a>
+    <a href="#case-study" class="n-drawer-link">Work</a>
     <a href="#numbers"  class="n-drawer-link">About</a>
     <a href="#contact"  class="n-drawer-link">Contact</a>
   </nav>
@@ -1141,13 +1895,246 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
   </div>
 </section>
 
+<!-- ━━━━━━━━━━━━━━━━ CASE STUDY ━━━━━━━━━━━━━━━━ -->
+<section id="case-study">
+  <div class="cs-wrap">
+
+    <!-- Left: text -->
+    <div class="cs-left sr-x">
+      <p class="sec-kicker">Live in Production</p>
+      <h2 class="cs-title">Built for J&amp;K<br><em>Government.</em></h2>
+      <p class="cs-body">PMU (R&amp;B) is the official project management platform for the Roads &amp; Buildings Department — deployed across the entire union territory of Jammu &amp; Kashmir. Field engineers, site supervisors, and administrative offices coordinate in real time, tracking physical and financial progress on public infrastructure works statewide.</p>
+
+      <div class="cs-tags">
+        <span class="cs-tag"><span class="cs-tag-dot"></span>Flutter · Android</span>
+        <span class="cs-tag"><span class="cs-tag-dot"></span>Role-based access control</span>
+        <span class="cs-tag"><span class="cs-tag-dot"></span>Real-time sync</span>
+        <span class="cs-tag"><span class="cs-tag-dot"></span>Location monitoring</span>
+        <span class="cs-tag"><span class="cs-tag-dot"></span>Photo &amp; doc uploads</span>
+        <span class="cs-tag"><span class="cs-tag-dot"></span>J&amp;K R&amp;B Department</span>
+      </div>
+
+      <a
+        href="https://play.google.com/store/apps/details?id=com.neovant.rnb"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="cs-store-btn"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M3 20.5v-17c0-.83 1-.9 1.4-.4l14 8.5c.4.24.4.76 0 1L4.4 20.9c-.4.5-1.4.43-1.4-.4z" fill="currentColor" opacity=".9"/>
+        </svg>
+        View on Google Play
+        <span class="i-arr">›</span>
+      </a>
+    </div>
+
+    <!-- Right: stat cards -->
+    <div class="cs-right sr">
+
+      <!-- Wide top card — state deployment -->
+      <div class="cs-card cs-card-blue cs-card-wide">
+        <div class="cs-card-label">Deployment Scale</div>
+        <div class="cs-card-val">All of J&amp;K</div>
+        <div class="cs-card-desc">Every district of Jammu &amp; Kashmir — the entire union territory — running on infrastructure we built.</div>
+      </div>
+
+      <!-- Districts -->
+      <div class="cs-card cs-card-dark">
+        <div class="cs-card-label">Districts</div>
+        <div class="cs-card-val">20<sup>+</sup></div>
+        <div class="cs-card-desc">Across both Jammu and Kashmir divisions.</div>
+      </div>
+
+      <!-- Client -->
+      <div class="cs-card cs-card-light">
+        <div class="cs-card-label">Client</div>
+        <div class="cs-card-val" style="font-size:clamp(18px,2vw,26px); letter-spacing:-.02em; margin-top:6px;">R&amp;B Dept.<br>J&amp;K Gov't</div>
+        <div class="cs-card-desc" style="margin-top:8px;">Roads &amp; Buildings Department, official state authority.</div>
+      </div>
+
+      <!-- Live pulsing trust banner -->
+      <div class="cs-trust">
+        <span class="cs-trust-dot"></span>
+        <p class="cs-trust-text"><strong>Live in production</strong> — actively used by field staff and administrative offices across J&amp;K. Published on Google Play Store under official government credentials.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━ MANDI LEDGER ━━━━━━━━━━━━━━━━ -->
+<section id="mandi-ledger">
+  <div class="ml-wrap">
+
+    <!-- Left: stat cards (mirrored layout vs PMU) -->
+    <div class="ml-cards ml-cards-col sr">
+
+      <!-- Wide hero card — blue, same treatment as PMU -->
+      <div class="ml-card ml-card-blue ml-card-wide">
+        <div class="ml-card-label">Market Context</div>
+        <div class="ml-card-val">Sopore Mandi</div>
+        <div class="ml-card-desc">One of Asia's largest apple markets. Existing software — no cloud backup, no mobile access, not built for scale.</div>
+        <div class="ml-chart">
+          <div class="ml-bar" style="height:35%"></div>
+          <div class="ml-bar" style="height:55%"></div>
+          <div class="ml-bar" style="height:45%"></div>
+          <div class="ml-bar" style="height:70%"></div>
+          <div class="ml-bar" style="height:60%"></div>
+          <div class="ml-bar" style="height:85%"></div>
+          <div class="ml-bar" style="height:75%"></div>
+          <div class="ml-bar" style="height:90%"></div>
+          <div class="ml-bar" style="height:80%"></div>
+          <div class="ml-bar" style="height:100%"></div>
+        </div>
+      </div>
+
+      <!-- User tiers -->
+      <div class="ml-card ml-card-dark">
+        <div class="ml-card-label">User Tiers</div>
+        <div class="ml-card-val">2</div>
+        <div class="ml-card-desc">Apple growers and mandi administration — one platform, role-based views.</div>
+      </div>
+
+      <!-- Insight depth -->
+      <div class="ml-card ml-card-dim">
+        <div class="ml-card-label">Insight Depth</div>
+        <div class="ml-card-val" style="font-size:clamp(16px,1.8vw,24px);letter-spacing:-.02em;margin-top:4px;">Season<br>by Season</div>
+        <div class="ml-card-desc" style="margin-top:8px;">Multi-year historical records, price trends, and P&amp;L per grower.</div>
+      </div>
+
+      <!-- Status banner -->
+      <div class="ml-status">
+        <div class="ml-status-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <circle cx="8" cy="8" r="5.5" stroke="#60a5fa" stroke-width="1"/>
+            <path d="M8 5v3.5l2 1.5" stroke="#60a5fa" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p class="ml-status-text"><strong>Currently in development</strong> — replacing legacy desktop-only software with a cloud-backed, mobile-first platform built for the full Kashmir apple economy.</p>
+      </div>
+
+    </div>
+
+    <!-- Right: text -->
+    <div class="sr-x">
+      <div class="ml-badge"><span class="ml-badge-dot"></span>In Development</div>
+      <h2 class="ml-title">Built for<br><em>Kashmir's farmers.</em></h2>
+      <p class="ml-body">Apple growers and mandi agents across Kashmir already use financial software — but it's desktop-only, has no cloud backup, and is out of reach on a phone. Mandi Ledger replaces it: a cloud-backed, mobile-first platform giving farmers full financial visibility across every harvest season. Transaction history, seasonal P&amp;L, historical price insights, and mandi administration — all in one place, accessible from any device.</p>
+
+      <div class="ml-tags">
+        <span class="ml-tag"><span class="ml-tag-dot"></span>Flutter · Android &amp; Web</span>
+        <span class="ml-tag"><span class="ml-tag-dot"></span>Cloud backup</span>
+        <span class="ml-tag"><span class="ml-tag-dot"></span>Financial analytics</span>
+        <span class="ml-tag"><span class="ml-tag-dot"></span>Historical price insights</span>
+        <span class="ml-tag"><span class="ml-tag-dot"></span>Seasonal P&amp;L</span>
+        <span class="ml-tag"><span class="ml-tag-dot"></span>Multi-grower records</span>
+        <span class="ml-tag"><span class="ml-tag-dot"></span>Mandi administration</span>
+        <span class="ml-tag"><span class="ml-tag-dot"></span>Sopore, Kashmir Valley</span>
+      </div>
+
+      <p style="font-size:13px;font-weight:300;color:var(--dim2);line-height:1.7;max-width:380px;padding:18px 20px;border-radius:12px;background:rgba(255,255,255,.03);border:.5px solid rgba(255,255,255,.07);">
+        The existing tools were built for desktops in an office. We're building for a farmer standing in an orchard in Sopore — with full financial history in their pocket.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━ TRAFFIC AI ━━━━━━━━━━━━━━━━ -->
+<section id="traffic-ai">
+  <div class="ta-wrap">
+
+    <!-- Left: text -->
+    <div class="sr-x">
+      <div class="ta-badge"><span class="ta-badge-icon"></span>Research Project</div>
+      <h2 class="ta-title">AI that reads<br><em>a city's pulse.</em></h2>
+      <p class="ta-body">A full-stack AI platform that converts Bengaluru's raw traffic data into actionable intelligence — real-time heatmaps, congestion prediction, accident risk analysis, vehicle growth forecasting, and an offline BMTC bus route finder. Built as the major project for MCA at RV College of Engineering, Bengaluru, under the guidance of Dr. B.H. Chandrashekar.</p>
+
+      <div class="ta-tags">
+        <span class="ta-tag"><span class="ta-tag-dot"></span>Python · Flask</span>
+        <span class="ta-tag"><span class="ta-tag-dot"></span>Random Forest Regressor</span>
+        <span class="ta-tag"><span class="ta-tag-dot"></span>Data engineering pipeline</span>
+        <span class="ta-tag"><span class="ta-tag-dot"></span>Interactive heatmaps</span>
+        <span class="ta-tag"><span class="ta-tag-dot"></span>Linear regression forecasting</span>
+        <span class="ta-tag"><span class="ta-tag-dot"></span>SQLite · sql.js</span>
+        <span class="ta-tag"><span class="ta-tag-dot"></span>HTML · CSS · JavaScript</span>
+        <span class="ta-tag"><span class="ta-tag-dot"></span>Voice interaction</span>
+        <span class="ta-tag"><span class="ta-tag-dot"></span>RVCE · MCA 2024–25</span>
+      </div>
+
+      <div class="ta-inst">
+        <div class="ta-inst-logo">RV</div>
+        <div class="ta-inst-text">
+          <strong>RV College of Engineering, Bengaluru</strong><br>
+          MCA Major Project · Guided by Dr. B.H. Chandrashekar
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: stat cards -->
+    <div class="ta-cards sr">
+
+      <!-- Wide blue hero card -->
+      <div class="ta-card ta-card-blue ta-card-wide">
+        <div class="ta-card-label">System</div>
+        <div class="ta-card-val">Bangalore Traffic<br><span style="font-size:.55em;letter-spacing:-.01em;opacity:.85">Heatmap &amp; Predictive Alert</span></div>
+        <div class="ta-card-desc" style="margin-top:10px;">Real-time traffic visualisation, AI-powered congestion prediction, and urban mobility analytics — all in one platform.</div>
+      </div>
+
+      <!-- ML model -->
+      <div class="ta-card ta-card-dark">
+        <div class="ta-card-label">ML Model</div>
+        <div class="ta-card-val" style="font-size:clamp(14px,1.6vw,20px);letter-spacing:-.01em;margin-top:4px;">Random<br>Forest</div>
+        <div class="ta-card-desc" style="margin-top:8px;">Regressor trained on historical time-series traffic data for precise congestion prediction.</div>
+      </div>
+
+      <!-- Feature count -->
+      <div class="ta-card ta-card-dim">
+        <div class="ta-card-label">Core Modules</div>
+        <div class="ta-card-val">6<sup>+</sup></div>
+        <div class="ta-card-desc">Heatmap, AI prediction, BMTC finder, accident analysis, vehicle forecast, voice interface.</div>
+      </div>
+
+      <!-- Feature highlights — full width -->
+      <div class="ta-card ta-card-dark ta-card-wide" style="padding:26px 26px 28px;">
+        <div class="ta-card-label" style="margin-bottom:12px;">Key capabilities</div>
+        <ul class="ta-feat-list">
+          <li>Offline BMTC bus route finder — SQLite embedded in browser via sql.js, up to 3 transfers</li>
+          <li>Vehicle growth forecasting to 2030 using linear regression on registration data</li>
+          <li>Accident risk categorisation dashboard with police station proximity analysis</li>
+          <li>Bike taxi ban impact analysis — pre/post comparison dashboards</li>
+          <li>Voice-activated heatmap navigation and real-time traffic card insights</li>
+          <li>135-page dissertation · RVCE Department of MCA · August 2025</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ━━━━━━━━━━━━━━━━ NUMBERS ━━━━━━━━━━━━━━━━ -->
 <section id="numbers">
   <div class="nums-grid">
-    <div class="num-cell sr d1"><div class="num-val">6<sup>+</sup></div><div class="num-label">Core Disciplines</div><div class="num-desc">Web, mobile, AI, cloud, ERP, and CRM — end to end, under one roof.</div></div>
-    <div class="num-cell sr d2"><div class="num-val">100<sup>%</sup></div><div class="num-label">Custom-Built</div><div class="num-desc">No templates. Every solution designed from first principles for your context.</div></div>
-    <div class="num-cell sr d3"><div class="num-val">J&amp;K</div><div class="num-label">Origin</div><div class="num-desc">Built in Jammu &amp; Kashmir. Delivering across India and beyond.</div></div>
-    <div class="num-cell sr d4"><div class="num-val">∞</div><div class="num-label">Scalability</div><div class="num-desc">Infrastructure designed to grow without re-engineering from the ground up.</div></div>
+    <div class="num-cell sr d1">
+      <div class="num-val">J&amp;K</div>
+      <div class="num-label">State-Wide Deployment</div>
+      <div class="num-desc">PMU (R&amp;B) is live across the entire union territory — every district, every department.</div>
+    </div>
+    <div class="num-cell sr d2">
+      <div class="num-val">20<sup>+</sup></div>
+      <div class="num-label">Districts Covered</div>
+      <div class="num-desc">Infrastructure works monitored across all districts of Jammu &amp; Kashmir in real time.</div>
+    </div>
+    <div class="num-cell sr d3">
+      <div class="num-val">Gov<sup>t</sup></div>
+      <div class="num-label">Grade Security</div>
+      <div class="num-desc">Role-based access, secure auth, and real-time sync — production hardened for public sector.</div>
+    </div>
+    <div class="num-cell sr d4">
+      <div class="num-val">6<sup>+</sup></div>
+      <div class="num-label">Core Disciplines</div>
+      <div class="num-desc">Web, mobile, AI, cloud, ERP, and CRM — end to end, under one roof.</div>
+    </div>
   </div>
 </section>
 
@@ -1160,7 +2147,7 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
   <p class="cta-sub sr">Tell us about your project. We'll show you how to make it exceptional.</p>
   <div class="cta-acts sr">
     <a href="#contact" class="btn-solid" style="font-size:14px;padding:13px 32px">Start a Project <span class="i-arr">›</span></a>
-    <a id="cta-email-btn" href="#" class="btn-ghost" style="font-size:14px;padding:12px 28px"><span class="__cf_email__" data-cfemail="3b52555d547b555e544d5a554f155255">[email&#160;protected]</span></a>
+    <a id="cta-email-btn" href="#" class="btn-ghost" style="font-size:14px;padding:12px 28px"><span class="__cf_email__" data-cfemail="e58c8b838aa58b808a93848b91cb8c8b">[email&#160;protected]</span></a>
   </div>
 </section>
 
@@ -1183,7 +2170,7 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
         </div>
         <div class="ct-row">
           <span class="ct-lbl">Email</span>
-          <span class="ct-val"><a id="ct-email-link" href="#"><span class="__cf_email__" data-cfemail="c7aea9a1a887a9a2a8b1a6a9b3e9aea9">[email&#160;protected]</span></a></span>
+          <span class="ct-val"><a id="ct-email-link" href="/cdn-cgi/l/email-protection#f990979f96b9979c968f98978dd79097"><span class="__cf_email__" data-cfemail="c8a1a6aea788a6ada7bea9a6bce6a1a6">[email&#160;protected]</span></a></span>
         </div>
         <div class="ct-row">
           <span class="ct-lbl">Web</span>
@@ -1226,9 +2213,9 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
           <span class="ct-alt-label">Call</span>
           <span class="ct-alt-val">+91 80828 21535</span>
         </a>
-        <a id="ct-email-alt" href="#" class="ct-alt-link">
+        <a id="ct-email-alt" href="/cdn-cgi/l/email-protection#41282f272e012f242e37202f356f282f" class="ct-alt-link">
           <span class="ct-alt-label">Email</span>
-          <span class="ct-alt-val"><span class="__cf_email__" data-cfemail="d5bcbbb3ba95bbb0baa3b4bba1fbbcbb">[email&#160;protected]</span></span>
+          <span class="ct-alt-val"><span class="__cf_email__" data-cfemail="6e070008012e000b01180f001a400700">[email&#160;protected]</span></span>
         </a>
         <a href="https://www.neovant.in" target="_blank" class="ct-alt-link">
           <span class="ct-alt-label">Website</span>
@@ -1249,6 +2236,7 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
       <ul class="ft-nav">
         <li><a href="#services">Services</a></li>
         <li><a href="#process">Process</a></li>
+        <li><a href="#case-study">Work</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="https://www.neovant.in" target="_blank">neovant.in</a></li>
       </ul>
@@ -1269,19 +2257,15 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
 
 <!-- ━━━━━━━━━━━━━━━━ SCRIPTS ━━━━━━━━━━━━━━━━ -->
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-/* ─ EMAIL LINKS (assembled to avoid proxy obfuscation) ── */
+/* ─ EMAIL LINKS ── */
 (function() {
-  const u = 'info';
-  const d = 'neovant.in';
-  const e = u + '@' + d;
-  const h = 'mailto:' + e;
-
-  const ids = ['cta-email-btn', 'ct-email-link', 'ct-email-alt'];
-  ids.forEach(id => {
+  const h = 'mailto:info@neovant.in';
+  ['cta-email-btn','ct-email-link','ct-email-alt'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.setAttribute('href', h);
   });
 })();
+
 /* ─ CURSOR ─────────────────────────── */
 const dot=document.getElementById('cur-dot'), ring=document.getElementById('cur-ring');
 let mx=0,my=0,rx=0,ry=0;
@@ -1296,17 +2280,11 @@ document.addEventListener('mousemove',e=>{
   requestAnimationFrame(lag);
 })();
 
-// Hover expand
 document.querySelectorAll('a,button,.bc,.pi,.num-cell,.pill,.ct-alt-link').forEach(el=>{
   el.addEventListener('mouseenter',()=>document.body.classList.add('ch'));
   el.addEventListener('mouseleave',()=>document.body.classList.remove('ch'));
 });
 
-// Section-aware cursor colour
-const lightSections = document.querySelectorAll('#services, #numbers, #contact, .philo-light');
-const darkSections  = document.querySelectorAll('#hero, .philo-dark, #process, #cta, footer');
-
-// Default: dark background
 document.body.classList.add('cur-dark');
 
 const curColorObs = new IntersectionObserver(entries=>{
@@ -1321,7 +2299,7 @@ const curColorObs = new IntersectionObserver(entries=>{
 document.querySelectorAll('#hero,.philo,.philo-dark,.philo-light,#services,#process,#numbers,#cta,#contact,footer')
   .forEach(el=>curColorObs.observe(el));
 
-/* ─ SMOOTH SCROLL with nav offset ──── */
+/* ─ SMOOTH SCROLL ──── */
 document.querySelectorAll('a[href^="#"]').forEach(link=>{
   link.addEventListener('click', e=>{
     const target = document.querySelector(link.getAttribute('href'));
@@ -1333,16 +2311,152 @@ document.querySelectorAll('a[href^="#"]').forEach(link=>{
   });
 });
 
-/* ─ STARS ──────────────────────────── */
+/* ─ STARS + FALLING METEORS ───────── */
 (function(){
-  const cv=document.getElementById('stars-cv'), cx=cv.getContext('2d');
-  let W,H,S=[];
-  function resize(){ W=cv.width=cv.offsetWidth; H=cv.height=cv.offsetHeight; }
-  function seed(n){ S=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*.9+.08,a:Math.random()*.5+.08,spd:Math.random()*.0005+.0002,ph:Math.random()*Math.PI*2})); }
-  let t=0;
-  function draw(){ cx.clearRect(0,0,W,H); t+=.01; S.forEach(s=>{ const a=s.a*(.55+.45*Math.sin(t*s.spd*800+s.ph)); cx.beginPath(); cx.arc(s.x,s.y,s.r,0,Math.PI*2); cx.fillStyle=`rgba(255,255,255,${a})`; cx.fill(); }); requestAnimationFrame(draw); }
-  resize(); seed(260); draw();
-  window.addEventListener('resize',()=>{ resize(); seed(260); });
+  const cv = document.getElementById('stars-cv');
+  const cx = cv.getContext('2d');
+  let W, H;
+
+  function resize(){
+    const hero = document.getElementById('hero');
+    W = cv.width  = hero.offsetWidth;
+    H = cv.height = hero.offsetHeight;
+  }
+
+  /* ── Static background stars ── */
+  const STAR_COUNT = 280;
+  const stars = [];
+  function seedStars(){
+    stars.length = 0;
+    for(let i = 0; i < STAR_COUNT; i++){
+      stars.push({
+        x:   Math.random() * W,
+        y:   Math.random() * H,
+        r:   Math.random() * 0.85 + 0.08,
+        a:   Math.random() * 0.5  + 0.08,
+        spd: Math.random() * 0.0005 + 0.0002,
+        ph:  Math.random() * Math.PI * 2
+      });
+    }
+  }
+
+  /* ── Falling meteors ── */
+  const meteors = [];
+  const MAX_METEORS = 6;
+
+  function spawnMeteor(){
+    /* Start from a random point across the top 60 % of the canvas,
+       travel diagonally down-right at a shallow angle */
+    const angle  = (Math.PI / 180) * (18 + Math.random() * 14); /* 18–32 deg */
+    const speed  = 1.8 + Math.random() * 2.4;
+    const length = 90  + Math.random() * 130;
+    meteors.push({
+      x:     Math.random() * W * 1.2 - W * 0.1,   /* start slightly off-screen left */
+      y:     Math.random() * H * 0.55,
+      vx:    Math.cos(angle) * speed,
+      vy:    Math.sin(angle) * speed,
+      len:   length,
+      life:  0,           /* 0 → 1 progress */
+      speed: speed,
+      alpha: 0.55 + Math.random() * 0.35,
+      width: 0.6 + Math.random() * 0.8
+    });
+  }
+
+  /* Stagger initial meteors so screen isn't empty on load */
+  let nextSpawn = 0;
+  function maybeSpawn(t){
+    if(t < nextSpawn) return;
+    if(meteors.length < MAX_METEORS && Math.random() < 0.6){
+      spawnMeteor();
+    }
+    nextSpawn = t + 900 + Math.random() * 2400; /* spawn every 0.9–3.3 s */
+  }
+
+  let t = 0;
+  let lastTs = 0;
+
+  function draw(ts){
+    const dt = Math.min(ts - lastTs, 50); /* cap delta to avoid jumps on tab-switch */
+    lastTs = ts;
+    t += dt * 0.001; /* convert ms to seconds */
+
+    cx.clearRect(0, 0, W, H);
+
+    /* ── Draw background stars ── */
+    for(const s of stars){
+      const a = s.a * (0.55 + 0.45 * Math.sin(t * s.spd * 800 + s.ph));
+      cx.beginPath();
+      cx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      cx.fillStyle = `rgba(255,255,255,${a})`;
+      cx.fill();
+    }
+
+    /* ── Draw & update meteors ── */
+    maybeSpawn(ts);
+
+    for(let i = meteors.length - 1; i >= 0; i--){
+      const m = meteors[i];
+
+      /* Tail tip (leading edge) */
+      const tx = m.x;
+      const ty = m.y;
+      /* Tail base (trailing edge) */
+      const bx = tx - Math.cos(Math.atan2(m.vy, m.vx)) * m.len;
+      const by = ty - Math.sin(Math.atan2(m.vy, m.vx)) * m.len;
+
+      /* Fade in/out — ramp up over first 20 % of life, ramp down over last 30 % */
+      const progress = m.life;
+      let fade;
+      if      (progress < 0.2)  fade = progress / 0.2;
+      else if (progress > 0.7)  fade = (1 - progress) / 0.3;
+      else                      fade = 1;
+
+      const grad = cx.createLinearGradient(bx, by, tx, ty);
+      grad.addColorStop(0,   `rgba(255,255,255,0)`);
+      grad.addColorStop(0.6, `rgba(255,255,255,${m.alpha * fade * 0.35})`);
+      grad.addColorStop(1,   `rgba(255,255,255,${m.alpha * fade})`);
+
+      cx.beginPath();
+      cx.moveTo(bx, by);
+      cx.lineTo(tx, ty);
+      cx.strokeStyle = grad;
+      cx.lineWidth   = m.width;
+      cx.lineCap     = 'round';
+      cx.stroke();
+
+      /* Tiny bright head dot */
+      cx.beginPath();
+      cx.arc(tx, ty, m.width * 1.1, 0, Math.PI * 2);
+      cx.fillStyle = `rgba(255,255,255,${m.alpha * fade * 0.9})`;
+      cx.fill();
+
+      /* Advance position */
+      m.x += m.vx;
+      m.y += m.vy;
+
+      /* Life based on distance traveled vs a max travel distance */
+      const maxTravel = m.len * 6;
+      const dx = m.x - (m.x - m.vx * (m.life * maxTravel / m.speed));
+      m.life = Math.min(1, m.life + m.speed / maxTravel);
+
+      /* Remove if off-screen or life complete */
+      if(m.life >= 1 || m.x > W + m.len || m.y > H + m.len){
+        meteors.splice(i, 1);
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  seedStars();
+  /* Seed a couple of meteors immediately so first load has activity */
+  spawnMeteor();
+  setTimeout(spawnMeteor, 600);
+  requestAnimationFrame(draw);
+
+  window.addEventListener('resize', () => { resize(); seedStars(); });
 })();
 
 /* ─ CTA LINES ──────────────────────── */
@@ -1372,7 +2486,7 @@ document.querySelectorAll('.sr,.sr-x').forEach(el=>sio.observe(el));
 /* ─ HERO PARALLAX ──────────────────── */
 const hi = document.getElementById('h-inner');
 window.addEventListener('scroll', () => {
-  if (window.innerWidth < 768) return; // disable on mobile
+  if (window.innerWidth < 768) return;
   const sy = window.scrollY, vh = window.innerHeight;
   if (sy < vh && hi) {
     hi.style.transform = `translateY(${sy * .24}px)`;
@@ -1382,14 +2496,14 @@ window.addEventListener('scroll', () => {
 
 /* ─ BACK TO TOP ─────────────────────── */
 const btt = document.getElementById('btt');
-
 window.addEventListener('scroll', () => {
   btt.classList.toggle('visible', window.scrollY > 400);
 }, { passive: true });
-
 btt.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+/* ─ HAMBURGER ─────────────────────── */
 const hamburger = document.getElementById('hamburger');
 const drawer    = document.getElementById('n-drawer');
 let drawerOpen  = false;
@@ -1404,20 +2518,10 @@ function toggleDrawer(force) {
 }
 
 hamburger.addEventListener('click', () => toggleDrawer());
-
-// Close drawer when a link is clicked
-drawer.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => toggleDrawer(false));
-});
-
-// Close on outside click
+drawer.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => toggleDrawer(false)); });
 document.addEventListener('click', e => {
-  if (drawerOpen && !drawer.contains(e.target) && !hamburger.contains(e.target)) {
-    toggleDrawer(false);
-  }
+  if (drawerOpen && !drawer.contains(e.target) && !hamburger.contains(e.target)) toggleDrawer(false);
 });
-
-// Close on escape
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && drawerOpen) toggleDrawer(false);
 });
@@ -1460,7 +2564,6 @@ document.querySelectorAll('.bc').forEach(card => {
     if (!colored) card.style.background = '';
   });
 });
-
 </script>
 </body>
 </html>
