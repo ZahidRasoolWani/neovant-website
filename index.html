@@ -122,8 +122,7 @@ body.ch #cur-ring { opacity:0; }
   }
 }
 .n-links { position:absolute; left:50%; transform:translateX(-50%); display:flex; gap:34px; list-style:none; }
-/* FIX: added position:relative so ::after pseudo-element anchors correctly */
-.n-link  { position:relative; font-size:12px; font-weight:300; letter-spacing:.03em; color:rgba(255,255,255,.72); transition:color .25s; }
+.n-link  { font-size:12px; font-weight:300; letter-spacing:.03em; color:rgba(255,255,255,.72); transition:color .25s; }
 .n-link:hover { color:var(--white); }
 .n-cta   { font-size:12px; font-weight:400; color:rgba(255,255,255,.85); padding:7px 18px; border-radius:980px; border:.5px solid rgba(255,255,255,.22); transition:all .3s; }
 .n-cta:hover { border-color:rgba(255,255,255,.55); background:rgba(255,255,255,.04); }
@@ -143,7 +142,6 @@ body.ch #cur-ring { opacity:0; }
   background-size:80px 80px;
   transform:perspective(600px) rotateX(38deg); transform-origin:bottom center;
   mask-image:linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.8) 30%, rgba(0,0,0,.5) 70%, transparent 100%);
-  overflow:hidden;
 }
 .h-ceil {
   position:absolute; top:0; left:0; right:0; height:40%;
@@ -152,7 +150,6 @@ body.ch #cur-ring { opacity:0; }
   background-size:80px 80px;
   transform:perspective(400px) rotateX(-22deg); transform-origin:top center;
   mask-image:linear-gradient(to top, transparent 0%, rgba(0,0,0,.5) 60%, transparent 100%);
-  overflow:hidden;
 }
 .h-light {
   position:absolute; inset:0; pointer-events:none;
@@ -1062,7 +1059,15 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
   .cs-wrap { grid-template-columns: 1fr; gap: 60px; }
   .cs-body { max-width: 100%; }
 }
+@media (max-width: 768px) {
+  #case-study { padding: 80px 5%; }
+  .cs-right   { grid-template-columns: 1fr 1fr; }
+  .cs-card    { padding: 24px 20px; }
+  .cs-card-val { font-size: clamp(32px, 9vw, 48px); }
+}
 @media (max-width: 480px) {
+  .cs-right { grid-template-columns: 1fr; }
+  .cs-card-wide { grid-column: span 1; }
   .cs-trust { flex-direction: column; align-items: flex-start; gap: 10px; }
 }
 
@@ -1291,7 +1296,14 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
   .ml-cards-col { order: 0; }
   .ml-body      { max-width: 100%; }
 }
+@media (max-width: 768px) {
+  #mandi-ledger { padding: 80px 5%; }
+  .ml-cards     { grid-template-columns: 1fr 1fr; }
+  .ml-card      { padding: 22px 18px; }
+}
 @media (max-width: 480px) {
+  .ml-cards     { grid-template-columns: 1fr; }
+  .ml-card-wide { grid-column: span 1; }
   .ml-status    { flex-direction: column; align-items: flex-start; gap: 10px; }
 }
 
@@ -1514,42 +1526,70 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
   .ta-wrap { grid-template-columns: 1fr; gap: 60px; }
   .ta-body { max-width: 100%; }
 }
+@media (max-width: 768px) {
+  #traffic-ai { padding: 80px 5%; }
+  .ta-cards   { grid-template-columns: 1fr 1fr; }
+  .ta-card    { padding: 22px 18px; }
+}
 @media (max-width: 480px) {
+  .ta-cards    { grid-template-columns: 1fr; }
   .ta-card-wide { grid-column: span 1; }
 }
 
 /* ════════════════════════════════════════════
    HERO MOBILE OVERFLOW FIX  ← PATCH
 ════════════════════════════════════════════ */
+
+/*
+  Root cause: The <canvas id="stars-cv"> has no position/size CSS,
+  so the JS canvas resize sets its pixel dimensions but the element
+  itself is in normal flow and can be wider than the viewport on
+  narrow screens, causing horizontal scroll / overflow on #hero.
+
+  Secondary cause: CSS perspective transforms on .h-floor / .h-ceil
+  can produce paint overflow that escapes the #hero clipping context
+  if the element doesn't have an explicit overflow:hidden enforced
+  at the right cascade layer.
+*/
+
+/* 1. Anchor the canvas absolutely so it never participates in layout */
 #stars-cv {
   position: absolute;
-  inset: 0;
-  width: 100% !important;
+  inset: 0;                   /* top/right/bottom/left: 0 */
+  width: 100% !important;     /* override any inline style from JS */
   height: 100% !important;
   pointer-events: none;
   z-index: 1;
 }
 
+/* 2. Perspective decorators: prevent any transform overflow escaping */
 .h-floor,
 .h-ceil {
   overflow: hidden;
 }
 
+/* 3. Belt-and-suspenders mobile rules */
 @media (max-width: 768px) {
+
+  /* Force hero to clip everything inside it */
   #hero {
-    overflow: hidden !important;
+    overflow: hidden !important;   /* belt */
+    /* 100svh already set by existing rule — left intact */
   }
 
+  /* Prevent .h-inner from pushing wider than viewport */
   .h-inner {
     max-width: 100vw;
     overflow: hidden;
   }
 
+  /* Title: allow wrapping rather than overflowing */
   .h-title {
     overflow-wrap: break-word;
     word-break: break-word;
   }
 
+  /* Buttons: never wider than viewport */
   .btn-solid,
   .btn-ghost {
     max-width: min(280px, 85vw);
@@ -1557,130 +1597,16 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
   }
 }
 
+/* 4. Extra-small screens */
 @media (max-width: 390px) {
   .h-inner { padding: 0 4%; }
-}
-
-/* ════════════════════════════════════════════
-   WORK SECTIONS — MOBILE FIX
-════════════════════════════════════════════ */
-@media (max-width: 768px) {
-
-  /* Section padding */
-  #case-study,
-  #mandi-ledger,
-  #traffic-ai {
-    padding: 64px 4% !important;
-  }
-
-  /* Outer two-col layout → single column */
-  #case-study .cs-wrap,
-  #mandi-ledger .ml-wrap,
-  #traffic-ai .ta-wrap {
-    display: block !important;
-    width: 100% !important;
-  }
-
-  /* Text columns: full width, no overflow */
-  #case-study .cs-left,
-  #mandi-ledger .ml-wrap > div:last-child,
-  #traffic-ai .ta-wrap > div:first-child {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-bottom: 32px;
-  }
-
-  /* Body copy: allow full width */
-  .cs-body, .ml-body, .ta-body {
-    max-width: 100% !important;
-  }
-
-  /* Mandi ledger: cards col comes AFTER text on mobile */
-  .ml-cards-col {
-    order: 1 !important;
-  }
-
-  /* Card grids: single column, full width */
-  #case-study .cs-right,
-  #mandi-ledger .ml-cards,
-  #traffic-ai .ta-cards {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    width: 100% !important;
-    gap: 8px !important;
-    box-sizing: border-box !important;
-  }
-
-  /* All wide cards: full span */
-  #case-study .cs-card-wide,
-  #mandi-ledger .ml-card-wide,
-  #traffic-ai .ta-card-wide {
-    grid-column: 1 / -1 !important;
-  }
-
-  /* Individual cards: constrained and padded */
-  #case-study .cs-card,
-  #mandi-ledger .ml-card,
-  #traffic-ai .ta-card {
-    padding: 22px 18px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-  }
-
-  /* Card values: scale down for narrow screens */
-  #case-study .cs-card-val,
-  #mandi-ledger .ml-card-val,
-  #traffic-ai .ta-card-val {
-    font-size: clamp(26px, 7vw, 40px) !important;
-  }
-
-  /* Trust / status banners: stack vertically, full width */
-  .cs-trust,
-  .ml-status {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 10px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Tags: wrap cleanly */
-  .cs-tags, .ml-tags, .ta-tags {
-    gap: 6px !important;
-  }
-  .cs-tag, .ml-tag, .ta-tag {
-    font-size: 11px !important;
-    padding: 4px 11px !important;
-  }
-
-  /* Feature list in traffic AI card */
-  .ta-feat-list li {
-    font-size: 11px !important;
-  }
-
-  /* Institution row */
-  .ta-inst {
-    max-width: 100% !important;
-  }
-
-  /* Store button */
-  .cs-store-btn {
-    width: 100% !important;
-    max-width: 300px !important;
-    justify-content: center !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Sparkline chart inside blue card */
-  .ml-chart {
-    height: 28px !important;
-  }
 }
 </style>
 </head>
 <body>
+
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
 
 <!-- ━━━━━━━━━━━━━━━━ NAV ━━━━━━━━━━━━━━━━ -->
 <nav id="nav">
@@ -2221,7 +2147,7 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
   <p class="cta-sub sr">Tell us about your project. We'll show you how to make it exceptional.</p>
   <div class="cta-acts sr">
     <a href="#contact" class="btn-solid" style="font-size:14px;padding:13px 32px">Start a Project <span class="i-arr">›</span></a>
-    <a id="cta-email-btn" href="#" class="btn-ghost" style="font-size:14px;padding:12px 28px">info@neovant.in</a>
+    <a id="cta-email-btn" href="#" class="btn-ghost" style="font-size:14px;padding:12px 28px"><span class="__cf_email__" data-cfemail="e58c8b838aa58b808a93848b91cb8c8b">[email&#160;protected]</span></a>
   </div>
 </section>
 
@@ -2244,7 +2170,7 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
         </div>
         <div class="ct-row">
           <span class="ct-lbl">Email</span>
-          <span class="ct-val"><a id="ct-email-link" href="mailto:info@neovant.in">info@neovant.in</a></span>
+          <span class="ct-val"><a id="ct-email-link" href="/cdn-cgi/l/email-protection#f990979f96b9979c968f98978dd79097"><span class="__cf_email__" data-cfemail="c8a1a6aea788a6ada7bea9a6bce6a1a6">[email&#160;protected]</span></a></span>
         </div>
         <div class="ct-row">
           <span class="ct-lbl">Web</span>
@@ -2287,9 +2213,9 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
           <span class="ct-alt-label">Call</span>
           <span class="ct-alt-val">+91 80828 21535</span>
         </a>
-        <a id="ct-email-alt" href="mailto:info@neovant.in" class="ct-alt-link">
+        <a id="ct-email-alt" href="/cdn-cgi/l/email-protection#41282f272e012f242e37202f356f282f" class="ct-alt-link">
           <span class="ct-alt-label">Email</span>
-          <span class="ct-alt-val">info@neovant.in</span>
+          <span class="ct-alt-val"><span class="__cf_email__" data-cfemail="6e070008012e000b01180f001a400700">[email&#160;protected]</span></span>
         </a>
         <a href="https://www.neovant.in" target="_blank" class="ct-alt-link">
           <span class="ct-alt-label">Website</span>
@@ -2330,7 +2256,7 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
 </button>
 
 <!-- ━━━━━━━━━━━━━━━━ SCRIPTS ━━━━━━━━━━━━━━━━ -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ─ EMAIL LINKS ── */
 (function() {
   const h = 'mailto:info@neovant.in';
@@ -2419,41 +2345,41 @@ document.querySelectorAll('a[href^="#"]').forEach(link=>{
   const MAX_METEORS = 6;
 
   function spawnMeteor(){
-    const angle  = (Math.PI / 180) * (18 + Math.random() * 14);
+    /* Start from a random point across the top 60 % of the canvas,
+       travel diagonally down-right at a shallow angle */
+    const angle  = (Math.PI / 180) * (18 + Math.random() * 14); /* 18–32 deg */
     const speed  = 1.8 + Math.random() * 2.4;
     const length = 90  + Math.random() * 130;
-    /* FIX: pre-compute maxTravel on spawn so life increment is consistent */
-    const maxTravel = length * 6;
     meteors.push({
-      x:          Math.random() * W * 1.2 - W * 0.1,
-      y:           Math.random() * H * 0.55,
-      vx:          Math.cos(angle) * speed,
-      vy:          Math.sin(angle) * speed,
-      len:         length,
-      life:        0,
-      speed:       speed,
-      maxTravel:   maxTravel,
-      alpha:       0.55 + Math.random() * 0.35,
-      width:       0.6 + Math.random() * 0.8
+      x:     Math.random() * W * 1.2 - W * 0.1,   /* start slightly off-screen left */
+      y:     Math.random() * H * 0.55,
+      vx:    Math.cos(angle) * speed,
+      vy:    Math.sin(angle) * speed,
+      len:   length,
+      life:  0,           /* 0 → 1 progress */
+      speed: speed,
+      alpha: 0.55 + Math.random() * 0.35,
+      width: 0.6 + Math.random() * 0.8
     });
   }
 
+  /* Stagger initial meteors so screen isn't empty on load */
   let nextSpawn = 0;
   function maybeSpawn(t){
     if(t < nextSpawn) return;
     if(meteors.length < MAX_METEORS && Math.random() < 0.6){
       spawnMeteor();
     }
-    nextSpawn = t + 900 + Math.random() * 2400;
+    nextSpawn = t + 900 + Math.random() * 2400; /* spawn every 0.9–3.3 s */
   }
 
   let t = 0;
   let lastTs = 0;
 
   function draw(ts){
-    const dt = Math.min(ts - lastTs, 50);
+    const dt = Math.min(ts - lastTs, 50); /* cap delta to avoid jumps on tab-switch */
     lastTs = ts;
-    t += dt * 0.001;
+    t += dt * 0.001; /* convert ms to seconds */
 
     cx.clearRect(0, 0, W, H);
 
@@ -2472,13 +2398,14 @@ document.querySelectorAll('a[href^="#"]').forEach(link=>{
     for(let i = meteors.length - 1; i >= 0; i--){
       const m = meteors[i];
 
+      /* Tail tip (leading edge) */
       const tx = m.x;
       const ty = m.y;
-      const angle = Math.atan2(m.vy, m.vx);
-      const bx = tx - Math.cos(angle) * m.len;
-      const by = ty - Math.sin(angle) * m.len;
+      /* Tail base (trailing edge) */
+      const bx = tx - Math.cos(Math.atan2(m.vy, m.vx)) * m.len;
+      const by = ty - Math.sin(Math.atan2(m.vy, m.vx)) * m.len;
 
-      /* FIX: fade in/out using life progress */
+      /* Fade in/out — ramp up over first 20 % of life, ramp down over last 30 % */
       const progress = m.life;
       let fade;
       if      (progress < 0.2)  fade = progress / 0.2;
@@ -2498,15 +2425,20 @@ document.querySelectorAll('a[href^="#"]').forEach(link=>{
       cx.lineCap     = 'round';
       cx.stroke();
 
+      /* Tiny bright head dot */
       cx.beginPath();
       cx.arc(tx, ty, m.width * 1.1, 0, Math.PI * 2);
       cx.fillStyle = `rgba(255,255,255,${m.alpha * fade * 0.9})`;
       cx.fill();
 
-      /* FIX: advance position first, then update life using pre-stored maxTravel */
+      /* Advance position */
       m.x += m.vx;
       m.y += m.vy;
-      m.life = Math.min(1, m.life + m.speed / m.maxTravel);
+
+      /* Life based on distance traveled vs a max travel distance */
+      const maxTravel = m.len * 6;
+      const dx = m.x - (m.x - m.vx * (m.life * maxTravel / m.speed));
+      m.life = Math.min(1, m.life + m.speed / maxTravel);
 
       /* Remove if off-screen or life complete */
       if(m.life >= 1 || m.x > W + m.len || m.y > H + m.len){
@@ -2519,6 +2451,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link=>{
 
   resize();
   seedStars();
+  /* Seed a couple of meteors immediately so first load has activity */
   spawnMeteor();
   setTimeout(spawnMeteor, 600);
   requestAnimationFrame(draw);
@@ -2625,11 +2558,10 @@ document.querySelectorAll('.bc').forEach(card => {
     const r  = card.getBoundingClientRect();
     const px = ((e.clientX - r.left) / r.width)  * 100;
     const py = ((e.clientY - r.top)  / r.height) * 100;
-    /* FIX: reset to explicit base color instead of empty string to avoid flash */
-    card.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(0,102,204,.04) 0%, var(--pure) 55%)`;
+    card.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(0,102,204,.04) 0%, #fff 55%)`;
   });
   card.addEventListener('mouseleave', () => {
-    if (!colored) card.style.background = 'var(--pure)';
+    if (!colored) card.style.background = '';
   });
 });
 </script>
