@@ -1601,58 +1601,12 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
 @media (max-width: 390px) {
   .h-inner { padding: 0 4%; }
 }
-   /* ════════════════════════════════════════════
-   WORK SECTIONS — MOBILE FIX
-════════════════════════════════════════════ */
-@media (max-width: 768px) {
-  #case-study .cs-wrap,
-  #mandi-ledger .ml-wrap,
-  #traffic-ai .ta-wrap {
-    grid-template-columns: 1fr !important;
-    gap: 40px !important;
-  }
-
-  .ml-cards-col {
-    order: 0 !important;
-  }
-
-  #case-study .cs-right,
-  #mandi-ledger .ml-cards,
-  #traffic-ai .ta-cards {
-    grid-template-columns: 1fr !important;
-    width: 100% !important;
-  }
-
-  #case-study .cs-card-wide,
-  #mandi-ledger .ml-card-wide,
-  #traffic-ai .ta-card-wide {
-    grid-column: 1 / -1 !important;
-  }
-
-  #case-study .cs-card,
-  #mandi-ledger .ml-card,
-  #traffic-ai .ta-card {
-    padding: 24px 20px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  #case-study .cs-card-val,
-  #mandi-ledger .ml-card-val,
-  #traffic-ai .ta-card-val {
-    font-size: clamp(28px, 8vw, 44px) !important;
-  }
-
-  .cs-trust,
-  .ml-status {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 10px !important;
-  }
-}
-   </style>
+</style>
 </head>
 <body>
+
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
 
 <!-- ━━━━━━━━━━━━━━━━ NAV ━━━━━━━━━━━━━━━━ -->
 <nav id="nav">
