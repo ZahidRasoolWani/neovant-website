@@ -1605,59 +1605,51 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
    WORK SECTIONS — MOBILE FIX
 ════════════════════════════════════════════ */
 @media (max-width: 768px) {
-  .cs-wrap,
-  .ml-wrap,
-  .ta-wrap {
+  #case-study .cs-wrap,
+  #mandi-ledger .ml-wrap,
+  #traffic-ai .ta-wrap {
     grid-template-columns: 1fr !important;
-    gap: 40px;
+    gap: 40px !important;
   }
 
   .ml-cards-col {
     order: 0 !important;
   }
 
-  .cs-right,
-  .ml-cards,
-  .ta-cards {
+  #case-study .cs-right,
+  #mandi-ledger .ml-cards,
+  #traffic-ai .ta-cards {
     grid-template-columns: 1fr !important;
+    width: 100% !important;
   }
 
-  .cs-card-wide,
-  .ml-card-wide,
-  .ta-card-wide {
-    grid-column: span 1 !important;
+  #case-study .cs-card-wide,
+  #mandi-ledger .ml-card-wide,
+  #traffic-ai .ta-card-wide {
+    grid-column: 1 / -1 !important;
   }
 
-  .cs-card,
-  .ml-card,
-  .ta-card {
-    padding: 24px 20px;
+  #case-study .cs-card,
+  #mandi-ledger .ml-card,
+  #traffic-ai .ta-card {
+    padding: 24px 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  .cs-card-val,
-  .ml-card-val,
-  .ta-card-val {
-    font-size: clamp(28px, 8vw, 44px);
-  }
-
-  .cs-body,
-  .ml-body,
-  .ta-body {
-    max-width: 100%;
+  #case-study .cs-card-val,
+  #mandi-ledger .ml-card-val,
+  #traffic-ai .ta-card-val {
+    font-size: clamp(28px, 8vw, 44px) !important;
   }
 
   .cs-trust,
   .ml-status {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
   }
 }
-</style>
-</head>
-<body>
-<div id="cur-dot"></div>
-<div id="cur-ring"></div>
 
 <!-- ━━━━━━━━━━━━━━━━ NAV ━━━━━━━━━━━━━━━━ -->
 <nav id="nav">
