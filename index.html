@@ -1601,6 +1601,67 @@ button.n-hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(
 @media (max-width: 390px) {
   .h-inner { padding: 0 4%; }
 }
+   /* ════════════════════════════════════════════
+   WORK SECTIONS — MOBILE FIX
+════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .cs-wrap,
+  .ml-wrap,
+  .ta-wrap {
+    grid-template-columns: 1fr !important;
+    gap: 40px;
+  }
+
+  /* Reset the mirrored card column order on Mandi Ledger */
+  .ml-cards-col {
+    order: 0 !important;
+  }
+
+  .cs-right,
+  .ml-cards,
+  .ta-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cs-card,
+  .ml-card,
+  .ta-card {
+    padding: 24px 18px;
+  }
+
+  .cs-card-val,
+  .ml-card-val,
+  .ta-card-val {
+    font-size: clamp(28px, 8vw, 44px);
+  }
+
+  .cs-body,
+  .ml-body,
+  .ta-body {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .cs-right,
+  .ml-cards,
+  .ta-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-card-wide,
+  .ml-card-wide,
+  .ta-card-wide {
+    grid-column: span 1;
+  }
+
+  .cs-trust,
+  .ml-status {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
 </style>
 </head>
 <body>
